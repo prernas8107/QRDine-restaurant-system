@@ -7,7 +7,7 @@ const menuItems = [
   {
     name: 'Paneer Tikka',
     description: 'Charcoal-grilled cottage cheese cubes marinated in spiced yogurt with crunchy bell peppers and onions.',
-    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=1617&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&auto=format&fit=crop&q=80',
     price: 320,
     category: 'Appetizers',
     isAvailable: true,
@@ -55,7 +55,7 @@ const menuItems = [
   {
     name: 'Hara Bhara Kabab',
     description: 'Pan-fried spiced patties of spinach, green peas, mashed potatoes, and fresh aromatic herbs.',
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
     price: 210,
     category: 'Appetizers',
     isAvailable: true,
@@ -155,7 +155,7 @@ const menuItems = [
   {
     name: 'Yellow Dal Tadka',
     description: 'Yellow lentils tempered with ghee, cumin seeds, garlic, dried red chilies, and fresh coriander.',
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&auto=format&fit=crop&q=80',
     price: 240,
     category: 'Main Courses',
     isAvailable: true,
@@ -247,7 +247,7 @@ const menuItems = [
   {
     name: 'Garlic Butter Naan',
     description: 'Clay-oven baked leavened bread brushed generously with garlic butter and fresh chopped coriander.',
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=800&auto=format&fit=crop&q=80',
     price: 80,
     category: 'Breads & Rotis',
     isAvailable: true,
