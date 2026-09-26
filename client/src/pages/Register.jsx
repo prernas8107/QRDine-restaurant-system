@@ -11,13 +11,15 @@ import {
   Eye,
   EyeOff,
   Shield,
+  AlertCircle,
+  ChevronRight,
 } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../redux/authSlice';
 import AuthBrandPanel from '../components/AuthBrandPanel';
 
 const inputClass =
-  'w-full pl-11 pr-4 py-3.5 bg-zinc-950 border border-zinc-800 rounded-2xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-400/35 focus:border-amber-400/50 transition-all duration-200 text-sm';
+  'w-full pl-11 pr-4 py-3.5 bg-zinc-950 border border-zinc-800 rounded-2xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-400/40 focus:border-amber-400/60 transition-all duration-200 text-sm font-medium';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -76,37 +78,37 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0c0b] flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-[#09090b] flex flex-col lg:flex-row font-sans">
       <div className="w-full lg:w-[54%] flex items-center justify-center px-5 py-10 sm:px-10 relative order-2 lg:order-1">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(251,191,36,0.06),transparent_40%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(251,191,36,0.07),transparent_40%)] pointer-events-none" />
 
         <div className="w-full max-w-[480px] relative z-10">
           <div className="lg:hidden flex items-center gap-3 mb-8">
-            <div className="w-11 h-11 rounded-2xl bg-amber-400 flex items-center justify-center">
+            <div className="w-11 h-11 rounded-2xl bg-amber-400 flex items-center justify-center shadow-lg shadow-amber-400/20">
               <QrCode className="w-5 h-5 text-zinc-950" />
             </div>
             <div>
               <h1 className="text-xl font-black tracking-tight text-white">QRDine</h1>
-              <p className="text-[10px] text-amber-400 font-bold uppercase tracking-[0.2em]">
+              <p className="text-[10px] text-amber-400 font-extrabold uppercase tracking-[0.2em]">
                 Contactless dining
               </p>
             </div>
           </div>
 
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400 mb-2">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-amber-400 mb-2">
             Join QRDine
           </p>
-          <h2 className="text-3xl font-black text-white tracking-tight">Create your account</h2>
-          <p className="text-sm text-zinc-400 mt-2 mb-8">
+          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">Create your account</h2>
+          <p className="text-xs sm:text-sm text-zinc-400 mt-2 mb-8 leading-relaxed">
             Faster checkout, saved favorites, and rewards on every table order.
           </p>
 
           {(validationError || error) && (
-            <div className="mb-6 p-4 bg-red-500/8 border border-red-500/20 rounded-2xl flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-red-500/15 flex items-center justify-center shrink-0">
-                <span className="text-red-400 text-sm font-bold">!</span>
+            <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 shadow-sm">
+              <div className="w-8 h-8 rounded-xl bg-red-500/20 flex items-center justify-center shrink-0">
+                <AlertCircle className="w-4 h-4 text-red-400" />
               </div>
-              <p className="text-red-400 text-sm">{validationError || error}</p>
+              <p className="text-red-400 text-xs sm:text-sm font-semibold">{validationError || error}</p>
             </div>
           )}
 
@@ -115,7 +117,7 @@ const Register = () => {
               <div>
                 <label
                   htmlFor="reg-name"
-                  className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                  className="block mb-2 text-xs font-extrabold text-zinc-400 uppercase tracking-wider"
                 >
                   Full name
                 </label>
@@ -139,7 +141,7 @@ const Register = () => {
               <div>
                 <label
                   htmlFor="reg-email"
-                  className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                  className="block mb-2 text-xs font-extrabold text-zinc-400 uppercase tracking-wider"
                 >
                   Email
                 </label>
@@ -164,7 +166,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="reg-phone"
-                className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                className="block mb-2 text-xs font-extrabold text-zinc-400 uppercase tracking-wider"
               >
                 Phone
               </label>
@@ -189,7 +191,7 @@ const Register = () => {
               <div>
                 <label
                   htmlFor="reg-password"
-                  className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                  className="block mb-2 text-xs font-extrabold text-zinc-400 uppercase tracking-wider"
                 >
                   Password
                 </label>
@@ -220,7 +222,7 @@ const Register = () => {
               <div>
                 <label
                   htmlFor="reg-confirm-password"
-                  className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                  className="block mb-2 text-xs font-extrabold text-zinc-400 uppercase tracking-wider"
                 >
                   Confirm
                 </label>
@@ -253,19 +255,20 @@ const Register = () => {
               </div>
             </div>
 
-            <div className="flex items-start pt-1 gap-2">
+            <div className="flex items-start pt-1 gap-2.5">
               <input
                 id="terms-reg"
                 type="checkbox"
+                required
                 className="mt-0.5 w-4 h-4 bg-zinc-950 border-zinc-700 rounded focus:ring-2 focus:ring-amber-400/40 accent-amber-400"
               />
-              <label htmlFor="terms-reg" className="text-xs text-zinc-400 leading-relaxed">
+              <label htmlFor="terms-reg" className="text-xs text-zinc-400 leading-relaxed font-medium">
                 I agree to QRDine&apos;s{' '}
-                <a href="#" className="text-amber-400 hover:text-amber-300 font-medium">
+                <a href="#" className="text-amber-400 hover:text-amber-300 font-bold">
                   Terms
                 </a>{' '}
                 and{' '}
-                <a href="#" className="text-amber-400 hover:text-amber-300 font-medium">
+                <a href="#" className="text-amber-400 hover:text-amber-300 font-bold">
                   Privacy Policy
                 </a>
               </label>
@@ -274,7 +277,7 @@ const Register = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-4 bg-amber-400 hover:bg-amber-300 text-zinc-950 font-bold rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-400/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-lg shadow-amber-400/15 active:scale-[0.98]"
+              className="w-full py-4 px-4 bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-400/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-xs sm:text-sm shadow-xl shadow-amber-400/20 active:scale-[0.98]"
             >
               {loading ? (
                 <>
@@ -290,9 +293,9 @@ const Register = () => {
             </button>
           </form>
 
-          <p className="mt-8 text-sm text-zinc-500 text-center">
+          <p className="mt-8 text-xs sm:text-sm text-zinc-500 text-center font-medium">
             Already have an account?{' '}
-            <Link to="/login" className="text-amber-400 hover:text-amber-300 font-semibold">
+            <Link to="/login" className="text-amber-400 hover:text-amber-300 font-extrabold">
               Sign in
             </Link>
           </p>
@@ -304,7 +307,9 @@ const Register = () => {
           headline={
             <>
               Join the table.
-              <span className="block text-amber-400">Join QRDine.</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
+                Join QRDine.
+              </span>
             </>
           }
           subhead="Create a free account and get welcome offers, loyalty points, and quicker ordering at every QRDine table."
