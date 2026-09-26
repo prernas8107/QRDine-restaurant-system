@@ -2,445 +2,409 @@ import mongoose from 'mongoose';
 import Menu from '../models/menu.js';
 import dbConnect from '../config/database.js';
 
-
 const menuItems = [
-
-  {
-    name: 'Caesar Salad',
-    description: 'Fresh romaine lettuce with parmesan cheese, croutons, and classic caesar dressing',
-    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800&h=600&fit=crop',
-    price: 299,
-    category: 'Appetizers',
-    isAvailable: true
-  },
-  {
-    name: 'Bruschetta',
-    description: 'Toasted bread topped with fresh tomatoes, basil, garlic, and mozzarella',
-    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73?w=800&h=600&fit=crop',
-    price: 249,
-    category: 'Appetizers',
-    isAvailable: true
-  },
-  {
-    name: 'Mozzarella Sticks',
-    description: 'Golden fried mozzarella cheese sticks served with marinara sauce',
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
-    price: 199,
-    category: 'Appetizers',
-    isAvailable: true
-  },
-  {
-    name: 'Vegetable Spring Rolls',
-    description: 'Crispy spring rolls filled with fresh vegetables, served with sweet and sour sauce',
-    image: 'https://images.unsplash.com/photo-1615367423057-4b46b8a1d69a?w=800&h=600&fit=crop',
-    price: 179,
-    category: 'Appetizers',
-    isAvailable: true
-  },
-  {
-    name: 'Hummus with Pita',
-    description: 'Creamy hummus served with warm pita bread and fresh vegetables',
-    image: 'https://images.unsplash.com/photo-1615367423057-4b46b8a1d69a?w=800&h=600&fit=crop',
-    price: 219,
-    category: 'Appetizers',
-    isAvailable: true
-  },
-  {
-    name: 'Caprese Salad',
-    description: 'Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze',
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
-    price: 279,
-    category: 'Appetizers',
-    isAvailable: true
-  },
+  // ==================== APPETIZERS & STARTERS ====================
   {
     name: 'Paneer Tikka',
-    description: 'Marinated cottage cheese cubes grilled to perfection with bell peppers and onions',
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&h=600&fit=crop',
-    price: 329,
+    description: 'Charcoal-grilled cottage cheese cubes marinated in spiced yogurt with crunchy bell peppers and onions.',
+    image: 'https://images.unsplash.com/photo-1567184109-d29b07164478?w=800&auto=format&fit=crop&q=80',
+    price: 320,
     category: 'Appetizers',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Vegetable Samosa',
-    description: 'Crispy fried pastry filled with spiced potatoes and peas, served with chutney',
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&h=600&fit=crop',
-    price: 149,
+    name: 'Vegetable Samosa (2 Pcs)',
+    description: 'Crisp golden pastry pockets stuffed with spiced potatoes, green peas, and served with mint & tamarind chutney.',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80',
+    price: 140,
     category: 'Appetizers',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Stuffed Mushrooms',
-    description: 'Button mushrooms stuffed with herbs and cheese, baked to perfection',
-    image: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&h=600&fit=crop',
-    price: 269,
+    name: 'Crispy Veg Spring Rolls',
+    description: 'Deep-fried golden pastry rolls filled with shredded cabbage, carrots, and glass noodles with sweet chili dip.',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80',
+    price: 190,
     category: 'Appetizers',
-    isAvailable: true
+    isAvailable: true,
+  },
+  {
+    name: 'Mozzarella Cheese Sticks',
+    description: 'Crispy breaded mozzarella fingers fried golden brown, served hot with tangy Italian marinara sauce.',
+    image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=800&auto=format&fit=crop&q=80',
+    price: 220,
+    category: 'Appetizers',
+    isAvailable: true,
+  },
+  {
+    name: 'Tomato Basil Bruschetta',
+    description: 'Garlic-rubbed toasted artisanal baguette slices topped with diced Roma tomatoes, fresh basil, and extra virgin olive oil.',
+    image: 'https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=800&auto=format&fit=crop&q=80',
+    price: 230,
+    category: 'Appetizers',
+    isAvailable: true,
+  },
+  {
+    name: 'Crispy Veg Manchurian Dry',
+    description: 'Crispy vegetable dumplings tossed with ginger, garlic, spring onions, and oriental dark soy sauce.',
+    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?w=800&auto=format&fit=crop&q=80',
+    price: 260,
+    category: 'Appetizers',
+    isAvailable: true,
+  },
+  {
+    name: 'Hara Bhara Kabab',
+    description: 'Pan-fried spiced patties of spinach, green peas, mashed potatoes, and fresh aromatic herbs.',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
+    price: 210,
+    category: 'Appetizers',
+    isAvailable: true,
+  },
+  {
+    name: 'Hummus with Pita Bread',
+    description: 'Creamy homemade chickpea tahini dip served with warm garlic pita wedges and Kalamata olives.',
+    image: 'https://images.unsplash.com/photo-1577906096429-f73c2c312435?w=800&auto=format&fit=crop&q=80',
+    price: 240,
+    category: 'Appetizers',
+    isAvailable: true,
+  },
+  {
+    name: 'Cheesy Garlic Bread',
+    description: 'Toasted French baguette loaded with melted mozzarella, roasted garlic butter, and Italian herbs.',
+    image: 'https://images.unsplash.com/photo-1619860860774-1e2e17343432?w=800&auto=format&fit=crop&q=80',
+    price: 180,
+    category: 'Appetizers',
+    isAvailable: true,
   },
 
-  // Soups
+  // ==================== SOUPS ====================
   {
-    name: 'Tomato Soup',
-    description: 'Creamy tomato soup with fresh herbs, served with croutons',
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&h=600&fit=crop',
-    price: 179,
+    name: 'Cream of Tomato Soup',
+    description: 'Slow-simmered vine-ripened tomatoes blended with fresh cream, served with crispy herb croutons.',
+    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop&q=80',
+    price: 160,
     category: 'Soups',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Vegetable Soup',
-    description: 'Hearty mixed vegetable soup with herbs and spices',
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&h=600&fit=crop',
-    price: 169,
+    name: 'Sweet Corn Veg Soup',
+    description: 'Classic comforting soup with tender sweet corn kernels and diced fresh garden vegetables.',
+    image: 'https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?w=800&auto=format&fit=crop&q=80',
+    price: 170,
     category: 'Soups',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Mushroom Soup',
-    description: 'Rich and creamy mushroom soup with a hint of garlic',
-    image: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&h=600&fit=crop',
-    price: 199,
+    name: 'Hot & Sour Veg Soup',
+    description: 'Spicy and tangy Chinese broth loaded with mushrooms, tofu, bamboo shoots, and green chili vinegar.',
+    image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800&auto=format&fit=crop&q=80',
+    price: 180,
     category: 'Soups',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Sweet Corn Soup',
-    description: 'Delicious sweet corn soup with vegetables and herbs',
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&h=600&fit=crop',
-    price: 189,
+    name: 'Creamy Wild Mushroom Soup',
+    description: 'Rich purée of roasted button and cremini mushrooms infused with garlic thyme and double cream.',
+    image: 'https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=800&auto=format&fit=crop&q=80',
+    price: 190,
     category: 'Soups',
-    isAvailable: true
+    isAvailable: true,
   },
 
-  // Main Courses
-  {
-    name: 'Margherita Pizza',
-    description: 'Classic pizza with fresh mozzarella, tomato sauce, and basil',
-    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&h=600&fit=crop',
-    price: 399,
-    category: 'Main Courses',
-    isAvailable: true
-  },
-  {
-    name: 'Vegetable Burger',
-    description: 'Grilled vegetable patty with lettuce, tomato, onion, and special sauce on a brioche bun',
-    image: 'https://images.unsplash.com/photo-1525059696034-4967a7290027?w=800&h=600&fit=crop',
-    price: 349,
-    category: 'Main Courses',
-    isAvailable: true
-  },
-  {
-    name: 'Pasta Primavera',
-    description: 'Fresh pasta with seasonal vegetables in a light cream sauce',
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
-    price: 379,
-    category: 'Main Courses',
-    isAvailable: true
-  },
-  {
-    name: 'Vegetable Stir Fry',
-    description: 'Mixed vegetables stir-fried with garlic and soy sauce, served with steamed rice',
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&h=600&fit=crop',
-    price: 329,
-    category: 'Main Courses',
-    isAvailable: true
-  },
-  {
-    name: 'Eggplant Parmesan',
-    description: 'Breaded eggplant slices topped with marinara sauce and melted mozzarella, served over pasta',
-    image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=800&h=600&fit=crop',
-    price: 429,
-    category: 'Main Courses',
-    isAvailable: true
-  },
-  {
-    name: 'Vegetable Lasagna',
-    description: 'Layers of pasta with ricotta, mozzarella, and fresh vegetables in marinara sauce',
-    image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=800&h=600&fit=crop',
-    price: 449,
-    category: 'Main Courses',
-    isAvailable: true
-  },
-  {
-    name: 'Mushroom Risotto',
-    description: 'Creamy arborio rice cooked with mushrooms, parmesan cheese, and herbs',
-    image: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&h=600&fit=crop',
-    price: 399,
-    category: 'Main Courses',
-    isAvailable: true
-  },
-  {
-    name: 'Vegetable Curry',
-    description: 'Mixed vegetables in a rich coconut curry sauce, served with basmati rice',
-    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop',
-    price: 379,
-    category: 'Main Courses',
-    isAvailable: true
-  },
+  // ==================== MAIN COURSES ====================
   {
     name: 'Paneer Butter Masala',
-    description: 'Cottage cheese in a rich, creamy tomato-based gravy with butter and spices',
-    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop',
-    price: 399,
+    description: 'Soft cottage cheese cubes simmered in a luscious, velvety tomato-cashew gravy with real butter.',
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80',
+    price: 340,
     category: 'Main Courses',
-    isAvailable: true
+    isAvailable: true,
   },
   {
     name: 'Dal Makhani',
-    description: 'Creamy black lentils cooked overnight with butter and cream, served with rice',
-    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop',
-    price: 329,
+    description: 'Slow-cooked whole black lentils and kidney beans simmered overnight with butter and fresh cream.',
+    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80',
+    price: 290,
     category: 'Main Courses',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Vegetable Biryani',
-    description: 'Fragrant basmati rice cooked with mixed vegetables and aromatic spices',
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&h=600&fit=crop',
-    price: 349,
+    name: 'Royal Shahi Paneer',
+    description: 'Mughlai style cottage cheese prepared in an aromatic white gravy of ground cashews, almonds, and saffron.',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&auto=format&fit=crop&q=80',
+    price: 360,
     category: 'Main Courses',
-    isAvailable: true
+    isAvailable: true,
   },
   {
     name: 'Palak Paneer',
-    description: 'Cottage cheese cubes in a smooth spinach gravy with spices',
-    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop',
-    price: 369,
+    description: 'Fresh cottage cheese cubes cooked in a vibrant spiced spinach purée with garlic and roasted cumin.',
+    image: 'https://images.unsplash.com/photo-1613292443284-c770284ad2d5?w=800&auto=format&fit=crop&q=80',
+    price: 330,
     category: 'Main Courses',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Vegetable Fried Rice',
-    description: 'Stir-fried rice with mixed vegetables, soy sauce, and aromatic spices',
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&h=600&fit=crop',
-    price: 299,
+    name: 'Kadhai Paneer',
+    description: 'Paneer cubes tossed with chunky bell peppers, onions, and freshly crushed coriander-cumin masala in a wok.',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&auto=format&fit=crop&q=80',
+    price: 340,
     category: 'Main Courses',
-    isAvailable: true
+    isAvailable: true,
+  },
+  {
+    name: 'Yellow Dal Tadka',
+    description: 'Yellow lentils tempered with ghee, cumin seeds, garlic, dried red chilies, and fresh coriander.',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
+    price: 240,
+    category: 'Main Courses',
+    isAvailable: true,
+  },
+  {
+    name: 'Hyderabadi Veg Dum Biryani',
+    description: 'Layered basmati rice cooked on dum with marinated vegetables, saffron, caramelized onions, and raita.',
+    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80',
+    price: 320,
+    category: 'Main Courses',
+    isAvailable: true,
+  },
+  {
+    name: 'Classic Margherita Pizza',
+    description: '12-inch hand-tossed pizza crust with San Marzano tomato sauce, fresh buffalo mozzarella, and basil.',
+    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&auto=format&fit=crop&q=80',
+    price: 380,
+    category: 'Main Courses',
+    isAvailable: true,
+  },
+  {
+    name: 'Gourmet Veggie Burger',
+    description: 'Handmade spiced vegetable patty layered with crisp lettuce, cheddar slice, tomatoes, and herb mayo in a brioche bun.',
+    image: 'https://images.unsplash.com/photo-1520072959219-c595dc870360?w=800&auto=format&fit=crop&q=80',
+    price: 260,
+    category: 'Main Courses',
+    isAvailable: true,
+  },
+  {
+    name: 'Penne Alfredo with Mushrooms',
+    description: 'Italian penne pasta tossed in a velvety parmesan garlic cream sauce with sautéed mushrooms.',
+    image: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=800&auto=format&fit=crop&q=80',
+    price: 340,
+    category: 'Main Courses',
+    isAvailable: true,
+  },
+  {
+    name: 'Hakka Veg Hakka Noodles',
+    description: 'Wok-tossed noodles with colorful julienned vegetables, spring onions, and light soy sauce.',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&auto=format&fit=crop&q=80',
+    price: 250,
+    category: 'Main Courses',
+    isAvailable: true,
+  },
+  {
+    name: 'Veg Fried Rice',
+    description: 'Fragrant steamed rice wok-fried with finely chopped carrots, beans, baby corn, and toasted sesame oil.',
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&auto=format&fit=crop&q=80',
+    price: 240,
+    category: 'Main Courses',
+    isAvailable: true,
   },
 
-  // Breads & Rotis
+  // ==================== SOUTH INDIAN SPECIALS ====================
   {
-    name: 'Garlic Naan',
-    description: 'Soft leavened bread brushed with garlic butter and herbs',
-    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73?w=800&h=600&fit=crop',
-    price: 79,
+    name: 'Special Mysore Masala Dosa',
+    description: 'Crispy golden fermented crepe layered with spicy red chutney, spiced potato mash, served with sambar & 3 chutneys.',
+    image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=800&auto=format&fit=crop&q=80',
+    price: 190,
+    category: 'South Indian',
+    isAvailable: true,
+  },
+  {
+    name: 'Steamed Idli Sambar (3 Pcs)',
+    description: 'Fluffy steamed rice & lentil cakes served with steaming hot vegetable sambar and fresh coconut chutney.',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
+    price: 130,
+    category: 'South Indian',
+    isAvailable: true,
+  },
+  {
+    name: 'Crispy Medu Vada (2 Pcs)',
+    description: 'Crispy golden lentil fritters with soft fluffy center, served with sambar and freshly ground chutneys.',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
+    price: 140,
+    category: 'South Indian',
+    isAvailable: true,
+  },
+  {
+    name: 'Cheese Corn Dosa',
+    description: 'Crispy dosa filled with sweet golden corn and overflowing melted cheddar cheese.',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
+    price: 220,
+    category: 'South Indian',
+    isAvailable: true,
+  },
+
+  // ==================== BREADS & ROTIS ====================
+  {
+    name: 'Garlic Butter Naan',
+    description: 'Clay-oven baked leavened bread brushed generously with garlic butter and fresh chopped coriander.',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80',
+    price: 80,
     category: 'Breads & Rotis',
-    isAvailable: true
+    isAvailable: true,
   },
   {
     name: 'Butter Naan',
-    description: 'Classic naan bread brushed with butter',
-    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73?w=800&h=600&fit=crop',
-    price: 69,
+    description: 'Soft and pillowy leavened flatbread baked in the tandoor and brushed with salted butter.',
+    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=800&auto=format&fit=crop&q=80',
+    price: 70,
     category: 'Breads & Rotis',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Plain Roti',
-    description: 'Whole wheat flatbread, freshly made',
-    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73?w=800&h=600&fit=crop',
-    price: 49,
+    name: 'Tandoori Roti (Butter)',
+    description: 'Traditional whole wheat flatbread baked crisp in clay tandoor with a dollop of butter.',
+    image: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=800&auto=format&fit=crop&q=80',
+    price: 45,
     category: 'Breads & Rotis',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Tandoori Roti',
-    description: 'Whole wheat bread baked in a tandoor oven',
-    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73?w=800&h=600&fit=crop',
-    price: 59,
+    name: 'Aloo Stuffed Paratha',
+    description: 'Whole wheat flatbread stuffed with spiced mashed potatoes, roasted on tawa with desi ghee.',
+    image: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800&auto=format&fit=crop&q=80',
+    price: 110,
     category: 'Breads & Rotis',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Stuffed Paratha',
-    description: 'Flaky flatbread stuffed with spiced potatoes',
-    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73?w=800&h=600&fit=crop',
-    price: 99,
+    name: 'Laccha Paratha',
+    description: 'Multi-layered flaky whole wheat bread cooked golden crisp on a griddle with ghee.',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&auto=format&fit=crop&q=80',
+    price: 85,
     category: 'Breads & Rotis',
-    isAvailable: true
+    isAvailable: true,
   },
 
-  // Desserts
+  // ==================== DESSERTS ====================
   {
-    name: 'Chocolate Lava Cake',
-    description: 'Warm chocolate cake with a molten center, served with vanilla ice cream',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop',
-    price: 249,
+    name: 'Warm Gulab Jamun (2 Pcs)',
+    description: 'Deep-fried golden milk solids soaked in warm cardamom and rose water infused sugar syrup.',
+    image: 'https://images.unsplash.com/photo-1593798688463-c7943ce0446b?w=800&auto=format&fit=crop&q=80',
+    price: 120,
     category: 'Desserts',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'New York Cheesecake',
-    description: 'Rich and creamy cheesecake with a graham cracker crust, topped with fresh berries',
-    image: 'https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=800&h=600&fit=crop',
-    price: 279,
+    name: 'Chocolate Lava Cake with Ice Cream',
+    description: 'Warm chocolate sponge cake with rich gooey molten chocolate center, served with vanilla bean ice cream.',
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&auto=format&fit=crop&q=80',
+    price: 240,
     category: 'Desserts',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Tiramisu',
-    description: 'Classic Italian dessert with coffee-soaked ladyfingers and mascarpone cream',
-    image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&h=600&fit=crop',
-    price: 299,
+    name: 'Saffron Kheer',
+    description: 'Traditional slow-simmered rice pudding enriched with whole milk, saffron, cardamom, and toasted pistachios.',
+    image: 'https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=800&auto=format&fit=crop&q=80',
+    price: 150,
     category: 'Desserts',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Ice Cream Sundae',
-    description: 'Three scoops of vanilla ice cream with chocolate sauce, whipped cream, and a cherry',
-    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&h=600&fit=crop',
-    price: 199,
+    name: 'Classic New York Cheesecake',
+    description: 'Velvety smooth baked cream cheese slice over buttery graham cracker crust with strawberry coulis.',
+    image: 'https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=800&auto=format&fit=crop&q=80',
+    price: 270,
     category: 'Desserts',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Gulab Jamun',
-    description: 'Soft milk dumplings soaked in sweet rose-flavored syrup',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop',
-    price: 149,
+    name: 'Sizzling Brownie with Ice Cream',
+    description: 'Warm fudge walnut brownie served on a sizzling platter topped with vanilla ice cream and hot chocolate fudge.',
+    image: 'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=800&auto=format&fit=crop&q=80',
+    price: 230,
     category: 'Desserts',
-    isAvailable: true
-  },
-  {
-    name: 'Rasgulla',
-    description: 'Soft cottage cheese balls in light sugar syrup',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop',
-    price: 129,
-    category: 'Desserts',
-    isAvailable: true
-  },
-  {
-    name: 'Kheer',
-    description: 'Traditional rice pudding with cardamom, nuts, and saffron',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop',
-    price: 159,
-    category: 'Desserts',
-    isAvailable: true
-  },
-  {
-    name: 'Brownie with Ice Cream',
-    description: 'Warm chocolate brownie served with vanilla ice cream',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop',
-    price: 229,
-    category: 'Desserts',
-    isAvailable: true
+    isAvailable: true,
   },
 
-  // Beverages
+  // ==================== BEVERAGES ====================
   {
-    name: 'Fresh Orange Juice',
-    description: 'Freshly squeezed orange juice',
-    image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&h=600&fit=crop',
-    price: 149,
+    name: 'Authentic Mango Lassi',
+    description: 'Chilled rich yogurt smoothie blended with sweet Alphonso mango pulp, cardamom, and pistachio slivers.',
+    image: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800&auto=format&fit=crop&q=80',
+    price: 140,
     category: 'Beverages',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Iced Tea',
-    description: 'Refreshing iced tea with lemon',
-    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=600&fit=crop',
-    price: 99,
+    name: 'Sweet Punjabi Lassi',
+    description: 'Traditional thick churned yogurt drink served chilled with a layer of fresh malai and saffron essence.',
+    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800&auto=format&fit=crop&q=80',
+    price: 120,
     category: 'Beverages',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Coca Cola',
-    description: 'Classic Coca Cola soft drink',
-    image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=800&h=600&fit=crop',
-    price: 79,
+    name: 'Fresh Mint Lime Soda',
+    description: 'Refreshing sparkling soda with fresh key lime juice, mint leaves, rock salt, and sugar syrup.',
+    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&auto=format&fit=crop&q=80',
+    price: 110,
     category: 'Beverages',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Fresh Lemonade',
-    description: 'Homemade lemonade with fresh lemons and mint',
-    image: 'https://images.unsplash.com/photo-1523677011781-c91d1bbe2fdc?w=800&h=600&fit=crop',
-    price: 119,
+    name: 'Cold Coffee with Ice Cream',
+    description: 'Creamy blended espresso coffee with whole milk, chocolate syrup, topped with vanilla ice cream scoop.',
+    image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=800&auto=format&fit=crop&q=80',
+    price: 160,
     category: 'Beverages',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Coffee',
-    description: 'Freshly brewed coffee',
-    image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=800&h=600&fit=crop',
-    price: 99,
+    name: 'Desi Masala Chai',
+    description: 'Freshly brewed strong Indian milk tea infused with crushed ginger, green cardamom, cloves, and cinnamon.',
+    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&auto=format&fit=crop&q=80',
+    price: 80,
     category: 'Beverages',
-    isAvailable: true
+    isAvailable: true,
   },
   {
-    name: 'Cappuccino',
-    description: 'Espresso with steamed milk and foam',
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800&h=600&fit=crop',
-    price: 149,
+    name: 'Fresh Valencia Orange Juice',
+    description: '100% pure freshly squeezed orange juice served chilled without added sugar or preservatives.',
+    image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&auto=format&fit=crop&q=80',
+    price: 150,
     category: 'Beverages',
-    isAvailable: true
+    isAvailable: true,
   },
-  {
-    name: 'Mango Lassi',
-    description: 'Creamy yogurt drink blended with fresh mango',
-    image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&h=600&fit=crop',
-    price: 129,
-    category: 'Beverages',
-    isAvailable: true
-  },
-  {
-    name: 'Sweet Lassi',
-    description: 'Traditional sweet yogurt drink with cardamom',
-    image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&h=600&fit=crop',
-    price: 109,
-    category: 'Beverages',
-    isAvailable: true
-  },
-  {
-    name: 'Masala Chai',
-    description: 'Spiced tea with milk, cardamom, and ginger',
-    image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=800&h=600&fit=crop',
-    price: 89,
-    category: 'Beverages',
-    isAvailable: true
-  },
-  {
-    name: 'Fresh Lime Soda',
-    description: 'Refreshing lime soda with mint and salt',
-    image: 'https://images.unsplash.com/photo-1523677011781-c91d1bbe2fdc?w=800&h=600&fit=crop',
-    price: 99,
-    category: 'Beverages',
-    isAvailable: true
-  }
 ];
 
 const seedMenu = async () => {
   try {
-
     await dbConnect();
-    console.log('Database connected');
+    console.log('Connected to Database');
 
-   
     await Menu.deleteMany({});
-    console.log('Cleared existing menu items');
+    console.log('Cleared old mismatched menu items');
 
-   
     const insertedItems = await Menu.insertMany(menuItems);
-    console.log(`Successfully seeded ${insertedItems.length} menu items`);
+    console.log(`Successfully seeded ${insertedItems.length} authentic dishes!`);
 
-  
     const categories = await Menu.aggregate([
       {
         $group: {
           _id: '$category',
-          count: { $sum: 1 }
-        }
-      }
+          count: { $sum: 1 },
+        },
+      },
     ]);
 
-    console.log('\nMenu items by category:');
-    categories.forEach(cat => {
-      console.log(`  ${cat._id}: ${cat.count} items`);
+    console.log('\nMenu items summary by category:');
+    categories.forEach((cat) => {
+      console.log(`  • ${cat._id}: ${cat.count} items`);
     });
 
- 
     await mongoose.connection.close();
-    console.log('\nDatabase connection closed');
+    console.log('\nDatabase connection closed. Seed complete!');
     process.exit(0);
   } catch (error) {
     console.error('Error seeding menu:', error);
@@ -448,10 +412,10 @@ const seedMenu = async () => {
   }
 };
 
-
 export { menuItems };
 
-const isDirectRun = process.argv[1] && process.argv[1].replace(/\\/g, '/').includes('menuSeeder');
+const isDirectRun =
+  process.argv[1] && process.argv[1].replace(/\\/g, '/').includes('menuSeeder');
 if (isDirectRun) {
   seedMenu();
 }
