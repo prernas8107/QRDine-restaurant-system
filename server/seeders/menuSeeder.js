@@ -23,7 +23,7 @@ const menuItems = [
   {
     name: 'Crispy Veg Spring Rolls',
     description: 'Deep-fried golden pastry rolls filled with shredded cabbage, carrots, and glass noodles with sweet chili dip.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1679310290259-78d9eaa32700?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 190,
     category: 'Appetizers',
     isAvailable: true,
@@ -47,7 +47,7 @@ const menuItems = [
   {
     name: 'Crispy Veg Manchurian Dry',
     description: 'Crispy vegetable dumplings tossed with ginger, garlic, spring onions, and oriental dark soy sauce.',
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?w=800&auto=format&fit=crop&q=80',
+    image: 'https://imgs.search.brave.com/ynnd_48kzS6zZyiFvyLBDNADiWhLBAczG5NLnlKrhKk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29va2luZ3dpdGhz/aWRkaGkuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzEx/L3ZlZy1tYW5jaHVy/aWFuLWRyeS03NTB4/NTAwLmpwZWc',
     price: 260,
     category: 'Appetizers',
     isAvailable: true,
@@ -55,7 +55,7 @@ const menuItems = [
   {
     name: 'Hara Bhara Kabab',
     description: 'Pan-fried spiced patties of spinach, green peas, mashed potatoes, and fresh aromatic herbs.',
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1599307767316-776533bb941c?q=80&w=1150&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 210,
     category: 'Appetizers',
     isAvailable: true,
@@ -63,7 +63,7 @@ const menuItems = [
   {
     name: 'Hummus with Pita Bread',
     description: 'Creamy homemade chickpea tahini dip served with warm garlic pita wedges and Kalamata olives.',
-    image: 'https://images.unsplash.com/photo-1577906096429-f73c2c312435?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1683725519288-eab9fa352335?q=80&w=950&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 240,
     category: 'Appetizers',
     isAvailable: true,
@@ -71,7 +71,7 @@ const menuItems = [
   {
     name: 'Cheesy Garlic Bread',
     description: 'Toasted French baguette loaded with melted mozzarella, roasted garlic butter, and Italian herbs.',
-    image: 'https://images.unsplash.com/photo-1619860860774-1e2e17343432?w=800&auto=format&fit=crop&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1711752902321-ef7b72b28b26?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 180,
     category: 'Appetizers',
     isAvailable: true,
@@ -79,7 +79,7 @@ const menuItems = [
 
   // ==================== SOUPS ====================
   {
-    name: 'Cream of Tomato Soup',
+    name: 'Creamy Tomato Soup',
     description: 'Slow-simmered vine-ripened tomatoes blended with fresh cream, served with crispy herb croutons.',
     image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop&q=80',
     price: 160,
@@ -97,7 +97,7 @@ const menuItems = [
   {
     name: 'Hot & Sour Veg Soup',
     description: 'Spicy and tangy Chinese broth loaded with mushrooms, tofu, bamboo shoots, and green chili vinegar.',
-    image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800&auto=format&fit=crop&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1705851313918-5c3d6b7668a9?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 180,
     category: 'Soups',
     isAvailable: true,
@@ -105,7 +105,7 @@ const menuItems = [
   {
     name: 'Creamy Wild Mushroom Soup',
     description: 'Rich purée of roasted button and cremini mushrooms infused with garlic thyme and double cream.',
-    image: 'https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=800&auto=format&fit=crop&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1669631647057-3403888e87da?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 190,
     category: 'Soups',
     isAvailable: true,
@@ -123,7 +123,7 @@ const menuItems = [
   {
     name: 'Dal Makhani',
     description: 'Slow-cooked whole black lentils and kidney beans simmered overnight with butter and fresh cream.',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1697155406121-85aac6236000?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 290,
     category: 'Main Courses',
     isAvailable: true,
@@ -131,7 +131,7 @@ const menuItems = [
   {
     name: 'Royal Shahi Paneer',
     description: 'Mughlai style cottage cheese prepared in an aromatic white gravy of ground cashews, almonds, and saffron.',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1631452180539-96aca7d48617?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 360,
     category: 'Main Courses',
     isAvailable: true,
@@ -139,7 +139,7 @@ const menuItems = [
   {
     name: 'Palak Paneer',
     description: 'Fresh cottage cheese cubes cooked in a vibrant spiced spinach purée with garlic and roasted cumin.',
-    image: 'https://images.unsplash.com/photo-1613292443284-c770284ad2d5?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1589647363585-f4a7d3877b10?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 330,
     category: 'Main Courses',
     isAvailable: true,
@@ -147,7 +147,7 @@ const menuItems = [
   {
     name: 'Kadhai Paneer',
     description: 'Paneer cubes tossed with chunky bell peppers, onions, and freshly crushed coriander-cumin masala in a wok.',
-    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1642821369314-100fece91d3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 340,
     category: 'Main Courses',
     isAvailable: true,
@@ -155,7 +155,7 @@ const menuItems = [
   {
     name: 'Yellow Dal Tadka',
     description: 'Yellow lentils tempered with ghee, cumin seeds, garlic, dried red chilies, and fresh coriander.',
-    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1626500154744-e4b394ffea16?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 240,
     category: 'Main Courses',
     isAvailable: true,
@@ -187,7 +187,7 @@ const menuItems = [
   {
     name: 'Penne Alfredo with Mushrooms',
     description: 'Italian penne pasta tossed in a velvety parmesan garlic cream sauce with sautéed mushrooms.',
-    image: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1686565510178-52c69af8be37?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 340,
     category: 'Main Courses',
     isAvailable: true,
@@ -229,7 +229,7 @@ const menuItems = [
   {
     name: 'Crispy Medu Vada (2 Pcs)',
     description: 'Crispy golden lentil fritters with soft fluffy center, served with sambar and freshly ground chutneys.',
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
+    image: 'https://imgs.search.brave.com/O9pHxYlfqJRSAJmcPpWcTDbZf4pw-Hu0kLHm3KQrzlQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzIwLzY5LzU0Lzcx/LzM2MF9GXzIwNjk1/NDcxNjZfb2cwbXlP/OHc4dzZvR2NsRHI0/NkV1SmdsZlRnSmhR/WlMuanBn',
     price: 140,
     category: 'South Indian',
     isAvailable: true,
@@ -237,7 +237,7 @@ const menuItems = [
   {
     name: 'Cheese Corn Dosa',
     description: 'Crispy dosa filled with sweet golden corn and overflowing melted cheddar cheese.',
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1694849789325-914b71ab4075?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 220,
     category: 'South Indian',
     isAvailable: true,
@@ -247,7 +247,7 @@ const menuItems = [
   {
     name: 'Garlic Butter Naan',
     description: 'Clay-oven baked leavened bread brushed generously with garlic butter and fresh chopped coriander.',
-    image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1756821752957-00bfcadc3748?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 80,
     category: 'Breads & Rotis',
     isAvailable: true,
@@ -255,7 +255,7 @@ const menuItems = [
   {
     name: 'Butter Naan',
     description: 'Soft and pillowy leavened flatbread baked in the tandoor and brushed with salted butter.',
-    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1559561724-4ea348cd867f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 70,
     category: 'Breads & Rotis',
     isAvailable: true,
@@ -263,7 +263,7 @@ const menuItems = [
   {
     name: 'Tandoori Roti (Butter)',
     description: 'Traditional whole wheat flatbread baked crisp in clay tandoor with a dollop of butter.',
-    image: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1633030318854-b076ff72770f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 45,
     category: 'Breads & Rotis',
     isAvailable: true,
@@ -271,7 +271,7 @@ const menuItems = [
   {
     name: 'Aloo Stuffed Paratha',
     description: 'Whole wheat flatbread stuffed with spiced mashed potatoes, roasted on tawa with desi ghee.',
-    image: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1788538397295-41114c76044d?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 110,
     category: 'Breads & Rotis',
     isAvailable: true,
@@ -279,7 +279,7 @@ const menuItems = [
   {
     name: 'Laccha Paratha',
     description: 'Multi-layered flaky whole wheat bread cooked golden crisp on a griddle with ghee.',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1668357530437-72a12c660f94?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 85,
     category: 'Breads & Rotis',
     isAvailable: true,
@@ -289,7 +289,7 @@ const menuItems = [
   {
     name: 'Warm Gulab Jamun (2 Pcs)',
     description: 'Deep-fried golden milk solids soaked in warm cardamom and rose water infused sugar syrup.',
-    image: 'https://images.unsplash.com/photo-1593798688463-c7943ce0446b?w=800&auto=format&fit=crop&q=80',
+    image: 'https://imgs.search.brave.com/4JHw-1kPAtW0QLArlNDr5CV2Nde9JX6RAlBgLKmSwCU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbnJl/ZGJlcnJ5LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMy8x/MC9HdWxhYi1KYW11/bi0yLVBjcy5wbmc',
     price: 120,
     category: 'Desserts',
     isAvailable: true,
@@ -305,7 +305,7 @@ const menuItems = [
   {
     name: 'Saffron Kheer',
     description: 'Traditional slow-simmered rice pudding enriched with whole milk, saffron, cardamom, and toasted pistachios.',
-    image: 'https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=800&auto=format&fit=crop&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1672076781341-4be6b995984c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 150,
     category: 'Desserts',
     isAvailable: true,
@@ -331,7 +331,7 @@ const menuItems = [
   {
     name: 'Authentic Mango Lassi',
     description: 'Chilled rich yogurt smoothie blended with sweet Alphonso mango pulp, cardamom, and pistachio slivers.',
-    image: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 140,
     category: 'Beverages',
     isAvailable: true,
@@ -339,7 +339,7 @@ const menuItems = [
   {
     name: 'Sweet Punjabi Lassi',
     description: 'Traditional thick churned yogurt drink served chilled with a layer of fresh malai and saffron essence.',
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1692620609860-be6717812f71?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 120,
     category: 'Beverages',
     isAvailable: true,
@@ -355,7 +355,7 @@ const menuItems = [
   {
     name: 'Cold Coffee with Ice Cream',
     description: 'Creamy blended espresso coffee with whole milk, chocolate syrup, topped with vanilla ice cream scoop.',
-    image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=800&auto=format&fit=crop&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1695724128298-12c754a24463?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 160,
     category: 'Beverages',
     isAvailable: true,
@@ -363,7 +363,7 @@ const menuItems = [
   {
     name: 'Desi Masala Chai',
     description: 'Freshly brewed strong Indian milk tea infused with crushed ginger, green cardamom, cloves, and cinnamon.',
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1630748662359-40a2105640c7?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: 80,
     category: 'Beverages',
     isAvailable: true,

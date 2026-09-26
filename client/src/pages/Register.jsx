@@ -15,6 +15,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../redux/authSlice';
 import AuthBrandPanel from '../components/AuthBrandPanel';
+import { Logo } from '../components/Logo';
 
 const inputClass =
   'w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white transition-all duration-200 text-sm';
@@ -79,16 +80,8 @@ const Register = () => {
     <div className="min-h-screen bg-slate-50 flex flex-col lg:flex-row">
       <div className="w-full lg:w-[54%] flex items-center justify-center px-5 py-10 sm:px-10 relative order-2 lg:order-1 bg-white">
         <div className="w-full max-w-[480px] relative z-10">
-          <div className="lg:hidden flex items-center gap-3 mb-8">
-            <div className="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md shadow-emerald-600/20">
-              <QrCode className="w-5 h-5" />
-            </div>
-            <div>
-              <h1 className="text-xl font-black tracking-tight text-slate-900">QRDine</h1>
-              <p className="text-[10px] text-emerald-700 font-bold uppercase tracking-[0.2em]">
-                Smart dining
-              </p>
-            </div>
+          <div className="lg:hidden mb-8">
+            <Logo showText={true} subtitle="Smart Dining" />
           </div>
 
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700 mb-2">

@@ -14,6 +14,7 @@ import { useDispatch } from 'react-redux';
 import { session } from '../redux/guestSlice';
 import { setTableInfo } from '../redux/cartSlice';
 import api from '../lib/api';
+import { Logo } from '../components/Logo';
 
 const Welcome = () => {
   const [searchParams] = useSearchParams();
@@ -121,19 +122,9 @@ const Welcome = () => {
 
       {/* Top Bar Header */}
       <header className="relative z-10 max-w-5xl mx-auto w-full px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-md shadow-emerald-600/20 text-white">
-            <UtensilsCrossed className="w-5 h-5" />
-          </div>
-          <div>
-            <h1 className="text-xl font-black tracking-tight text-slate-900 flex items-center gap-2">
-              QRDine
-            </h1>
-            <p className="text-[10px] text-emerald-700 font-bold tracking-widest uppercase">
-              Smart Dine-In Experience
-            </p>
-          </div>
-        </div>
+        <Link to="/welcome" className="focus:outline-none">
+          <Logo showText={true} subtitle="Smart Dine-In Experience" />
+        </Link>
 
         <div className="flex items-center gap-2 sm:gap-4 text-xs font-bold">
           <Link

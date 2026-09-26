@@ -259,7 +259,7 @@ const Homepage = () => {
                       className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
                       onError={(e) => {
                         e.target.src =
-                          'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop';
+                          'https://placehold.co/600x400/10b981/ffffff?text=Delicious+Dish';
                       }}
                     />
 

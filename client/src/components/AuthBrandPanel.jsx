@@ -1,4 +1,5 @@
 import { QrCode, ScanLine, UtensilsCrossed, Clock } from 'lucide-react';
+import { Logo } from './Logo';
 
 const highlights = [
   { icon: ScanLine, label: 'Scan the table QR stand' },
@@ -19,16 +20,8 @@ const AuthBrandPanel = ({ headline, subhead }) => {
         }}
       />
 
-      <div className="relative z-10 flex items-center gap-3">
-        <div className="w-12 h-12 rounded-2xl bg-white text-emerald-900 flex items-center justify-center shadow-lg">
-          <QrCode className="w-6 h-6" strokeWidth={2.4} />
-        </div>
-        <div>
-          <p className="text-2xl font-black tracking-tight text-white leading-none">QRDine</p>
-          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-emerald-300 mt-1">
-            Smart Dining System
-          </p>
-        </div>
+      <div className="relative z-10">
+        <Logo size="lg" showText={true} darkText={false} subtitle="Smart Dining System" />
       </div>
 
       <div className="relative z-10 space-y-8 max-w-md">

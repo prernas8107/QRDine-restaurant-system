@@ -17,6 +17,7 @@ import {
 import { useToast } from '../context/ToastContext';
 import Footer from './Footer';
 import TableQRModal from './TableQRModal';
+import { Logo } from './Logo';
 
 const AuthenticatedLayout = ({ children }) => {
   const dispatch = useDispatch();
@@ -51,19 +52,9 @@ const AuthenticatedLayout = ({ children }) => {
             {/* Brand Logo & Name */}
             <Link
               to="/"
-              className="flex items-center gap-3 shrink-0 group focus:outline-none"
+              className="shrink-0 focus:outline-none"
             >
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform text-white">
-                <UtensilsCrossed className="w-5 h-5" />
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="text-base sm:text-lg font-black tracking-tight text-slate-900 leading-tight">
-                  QRDine
-                </h1>
-                <p className="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">
-                  Smart Dining
-                </p>
-              </div>
+              <Logo showText={true} subtitle="Smart Dining" />
             </Link>
 
             {/* Table Badge & QR Switcher */}
