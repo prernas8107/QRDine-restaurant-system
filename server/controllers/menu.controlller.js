@@ -1,5 +1,23 @@
 import cloudinary from '../config/cloudinary.js';
 import Menu from '../models/menu.js';
+import { menuItems } from '../seeders/menuSeeder.js';
+
+export const syncDefaultMenu = async (req, res) => {
+  try {
+    await Menu.deleteMany({});
+    const inserted = await Menu.insertMany(menuItems);
+    return res.status(200).json({
+      success: true,
+      message: `Successfully synchronized ${inserted.length} authentic dishes into database!`,
+      count: inserted.length,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to sync menu: ' + error.message,
+    });
+  }
+};
 
 export const createMenu = async (req, res, next) => {
   try {
