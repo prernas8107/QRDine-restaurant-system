@@ -15,7 +15,7 @@ import {
 import AuthBrandPanel from '../components/AuthBrandPanel';
 
 const inputClass =
-  'w-full pl-11 pr-4 py-3.5 bg-zinc-950 border border-zinc-800 rounded-2xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-400/35 focus:border-amber-400/50 transition-all duration-200 text-sm';
+  'w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white transition-all duration-200 text-sm';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -57,58 +57,56 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0c0b] flex">
+    <div className="min-h-screen bg-slate-50 flex">
       <div className="hidden lg:block lg:w-[46%] shrink-0">
         <AuthBrandPanel
           headline={
             <>
               Scan. Order.
-              <span className="block text-amber-400">Dine with QRDine.</span>
+              <span className="block text-emerald-300">Dine with Ease.</span>
             </>
           }
-          subhead="Sign in to save favorites, earn rewards, and send orders straight to the kitchen from your table."
+          subhead="Sign in to save favorite dishes, collect loyalty discounts, and send orders straight to the kitchen from your table."
         />
       </div>
 
-      <div className="w-full lg:w-[54%] flex items-center justify-center px-5 py-10 sm:px-10 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(251,191,36,0.06),transparent_40%)] pointer-events-none" />
-
+      <div className="w-full lg:w-[54%] flex items-center justify-center px-5 py-10 sm:px-10 relative bg-white">
         <div className="w-full max-w-[420px] relative z-10">
           <div className="lg:hidden flex items-center gap-3 mb-10">
-            <div className="w-11 h-11 rounded-2xl bg-amber-400 flex items-center justify-center">
-              <QrCode className="w-5 h-5 text-zinc-950" />
+            <div className="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md shadow-emerald-600/20">
+              <QrCode className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-xl font-black tracking-tight text-white">QRDine</h1>
-              <p className="text-[10px] text-amber-400 font-bold uppercase tracking-[0.2em]">
-                Contactless dining
+              <h1 className="text-xl font-black tracking-tight text-slate-900">QRDine</h1>
+              <p className="text-[10px] text-emerald-700 font-bold uppercase tracking-[0.2em]">
+                Smart dining
               </p>
             </div>
           </div>
 
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400 mb-2">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700 mb-2">
             Member access
           </p>
-          <h2 className="text-3xl font-black text-white tracking-tight">Welcome back</h2>
-          <p className="text-sm text-zinc-400 mt-2 mb-8">
+          <h2 className="text-3xl font-black text-slate-900 tracking-tight">Welcome back</h2>
+          <p className="text-sm text-slate-500 mt-2 mb-8">
             Sign in to your QRDine account to continue.
           </p>
 
           {successMsg && !error && (
-            <div className="mb-6 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-4 h-4 text-emerald-700" />
               </div>
-              <p className="text-emerald-300 text-sm font-medium">{successMsg}</p>
+              <p className="text-emerald-800 text-sm font-medium">{successMsg}</p>
             </div>
           )}
 
           {error && (
-            <div className="mb-6 p-4 bg-red-500/8 border border-red-500/20 rounded-2xl flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-red-500/15 flex items-center justify-center shrink-0">
-                <span className="text-red-400 text-sm font-bold">!</span>
+            <div className="mb-6 p-4 bg-rose-50 border border-rose-200 rounded-2xl flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center shrink-0">
+                <span className="text-rose-600 text-sm font-bold">!</span>
               </div>
-              <p className="text-red-400 text-sm">{error}</p>
+              <p className="text-rose-600 text-sm font-medium">{error}</p>
             </div>
           )}
 
@@ -116,13 +114,13 @@ const Login = () => {
             <div>
               <label
                 htmlFor="login-email"
-                className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                className="block mb-2 text-xs font-bold text-slate-700 uppercase tracking-wider"
               >
-                Email
+                Email Address
               </label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail className="h-4 w-4 text-zinc-500 group-focus-within:text-amber-400 transition-colors" />
+                  <Mail className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
                 </div>
                 <input
                   type="email"
@@ -140,13 +138,13 @@ const Login = () => {
             <div>
               <label
                 htmlFor="login-password"
-                className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                className="block mb-2 text-xs font-bold text-slate-700 uppercase tracking-wider"
               >
                 Password
               </label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Lock className="h-4 w-4 text-zinc-500 group-focus-within:text-amber-400 transition-colors" />
+                  <Lock className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
                 </div>
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -161,7 +159,7 @@ const Login = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-zinc-500 hover:text-zinc-300 transition-colors"
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
@@ -173,15 +171,15 @@ const Login = () => {
                 <input
                   id="remember-login"
                   type="checkbox"
-                  className="w-4 h-4 bg-zinc-950 border-zinc-700 rounded focus:ring-2 focus:ring-amber-400/40 accent-amber-400"
+                  className="w-4 h-4 bg-white border-slate-300 rounded focus:ring-2 focus:ring-emerald-500/30 accent-emerald-600"
                 />
-                <label htmlFor="remember-login" className="text-xs text-zinc-400">
+                <label htmlFor="remember-login" className="text-xs text-slate-600 font-medium cursor-pointer">
                   Remember me
                 </label>
               </div>
               <Link
                 to="/recovery"
-                className="text-xs text-amber-400 hover:text-amber-300 font-medium transition-colors"
+                className="text-xs text-emerald-700 hover:text-emerald-800 font-bold transition-colors"
               >
                 Forgot password?
               </Link>
@@ -190,7 +188,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-4 bg-amber-400 hover:bg-amber-300 text-zinc-950 font-bold rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-400/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-lg shadow-amber-400/15 active:scale-[0.98]"
+              className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-md shadow-emerald-600/20 active:scale-[0.98] cursor-pointer"
             >
               {loading ? (
                 <>
@@ -206,15 +204,15 @@ const Login = () => {
             </button>
           </form>
 
-          <p className="mt-8 text-sm text-zinc-500 text-center">
+          <p className="mt-8 text-sm text-slate-600 text-center">
             New to QRDine?{' '}
-            <Link to="/register" className="text-amber-400 hover:text-amber-300 font-semibold">
+            <Link to="/register" className="text-emerald-700 hover:text-emerald-800 font-bold">
               Create an account
             </Link>
           </p>
-          <p className="mt-3 text-center text-[11px] text-zinc-600">
+          <p className="mt-3 text-center text-[11px] text-slate-400">
             Or continue as{' '}
-            <Link to="/welcome" className="text-zinc-400 hover:text-amber-400 font-medium">
+            <Link to="/welcome" className="text-slate-600 hover:text-emerald-700 font-semibold">
               Guest (QR scan)
             </Link>
           </p>

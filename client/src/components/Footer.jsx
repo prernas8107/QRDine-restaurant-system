@@ -1,207 +1,106 @@
 import React from 'react';
-import { QrCode, MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { QrCode, MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Youtube, Sparkles } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-950/90 border-t border-zinc-800/80 mt-auto">
-      {/* Advertisement Section */}
-      <div className="bg-gradient-to-r from-zinc-900/80 to-zinc-950/80 border-b border-zinc-800/60 py-8">
+    <footer className="bg-white border-t border-slate-200 mt-auto">
+      {/* Advertisement / Perks Section */}
+      <div className="bg-slate-50/80 border-b border-slate-200 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Special Offer */}
-            <div className="bg-amber-400/5 border border-amber-400/15 rounded-2xl p-6 text-center group hover:border-amber-400/30 transition-all duration-300">
-              <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 mb-2">20% OFF</div>
-              <p className="text-zinc-300 text-sm font-medium">On your first order</p>
-              <p className="text-amber-400/80 text-xs mt-1 font-semibold">Use code: FIRST20</p>
+            <div className="bg-white border border-emerald-200 rounded-2xl p-6 text-center shadow-xs">
+              <div className="text-3xl font-black text-emerald-600 mb-1">30% OFF</div>
+              <p className="text-slate-900 text-sm font-bold">On your first order</p>
+              <p className="text-emerald-700 text-xs mt-1 font-semibold">Use code: FIRST30</p>
             </div>
 
-            {/* Free Delivery */}
-            <div className="bg-emerald-400/5 border border-emerald-400/15 rounded-2xl p-6 text-center group hover:border-emerald-400/30 transition-all duration-300">
-              <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-2">FREE</div>
-              <p className="text-zinc-300 text-sm font-medium">Delivery on orders above ₹500</p>
-              <p className="text-emerald-400/80 text-xs mt-1 font-semibold">Valid for all locations</p>
+            {/* Fast Table Service */}
+            <div className="bg-white border border-teal-200 rounded-2xl p-6 text-center shadow-xs">
+              <div className="text-3xl font-black text-teal-600 mb-1">FAST</div>
+              <p className="text-slate-900 text-sm font-bold">10-15 Min Table Delivery</p>
+              <p className="text-teal-700 text-xs mt-1 font-semibold">Zero wait time at table</p>
             </div>
 
-            {/* Loyalty Program */}
-            <div className="bg-violet-400/5 border border-violet-400/15 rounded-2xl p-6 text-center group hover:border-violet-400/30 transition-all duration-300">
-              <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400 mb-2">EARN</div>
-              <p className="text-zinc-300 text-sm font-medium">Points on every order</p>
-              <p className="text-violet-400/80 text-xs mt-1 font-semibold">Join our loyalty program</p>
+            {/* Pure Veg */}
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-xs">
+              <div className="text-3xl font-black text-slate-800 mb-1">100%</div>
+              <p className="text-slate-900 text-sm font-bold">Fresh Vegetarian Quality</p>
+              <p className="text-slate-500 text-xs mt-1 font-semibold">Authentic chef recipes</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-500/15">
-                <QrCode className="w-5 h-5 text-black" />
+              <div className="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center shadow-xs text-white">
+                <QrCode className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-lg font-black text-white">QRDine</h3>
-                <p className="text-[10px] text-amber-400 uppercase tracking-wider font-bold">Smart Restaurant Platform</p>
+                <h4 className="text-base font-black text-slate-900">QRDine</h4>
+                <p className="text-[10px] text-emerald-700 uppercase tracking-wider font-bold">Smart Restaurant Platform</p>
               </div>
             </div>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              Serving delicious vegetarian cuisine with a commitment to quality, freshness, and exceptional service since 2015.
+            <p className="text-xs text-slate-500 leading-relaxed">
+              Serving authentic gourmet vegetarian recipes with seamless QR table ordering and instant kitchen dispatch.
             </p>
-            <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-amber-400 hover:border-amber-400/30 transition-all">
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-amber-400 hover:border-amber-400/30 transition-all">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-amber-400 hover:border-amber-400/30 transition-all">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-amber-400 hover:border-amber-400/30 transition-all">
-                <Youtube className="w-4 h-4" />
-              </a>
+          </div>
+
+          {/* Contact Details */}
+          <div>
+            <h4 className="text-slate-900 font-bold mb-3 text-xs uppercase tracking-wider">Contact & Location</h4>
+            <div className="space-y-2 text-xs text-slate-600">
+              <p className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Fine Dining Plaza, City Center</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-emerald-600" />
+                <span>+91 98765 43210</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-emerald-600" />
+                <span>support@qrdine.com</span>
+              </p>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Dining Hours */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <a href="#" className="text-zinc-400 hover:text-amber-400 transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-amber-400 transition-colors"></span>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-zinc-400 hover:text-amber-400 transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-amber-400 transition-colors"></span>
-                  Our Menu
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-zinc-400 hover:text-amber-400 transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-amber-400 transition-colors"></span>
-                  Reservations
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-zinc-400 hover:text-amber-400 transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-amber-400 transition-colors"></span>
-                  Events & Catering
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-zinc-400 hover:text-amber-400 transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-amber-400 transition-colors"></span>
-                  Gift Cards
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-zinc-400 hover:text-amber-400 transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-amber-400 transition-colors"></span>
-                  Careers
-                </a>
-              </li>
-            </ul>
+            <h4 className="text-slate-900 font-bold mb-3 text-xs uppercase tracking-wider">Restaurant Hours</h4>
+            <div className="space-y-1.5 text-xs text-slate-600">
+              <p className="font-semibold text-slate-800">Monday - Friday:</p>
+              <p className="text-slate-500">11:00 AM - 11:00 PM</p>
+              <p className="font-semibold text-slate-800 pt-1">Saturday - Sunday:</p>
+              <p className="text-slate-500">10:30 AM - 11:30 PM</p>
+            </div>
           </div>
 
-          {/* Branch Locations */}
+          {/* Social */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Our Branches</h4>
-            <ul className="space-y-4">
-              <li>
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-white text-sm font-semibold">Mumbai - Bandra</p>
-                    <p className="text-zinc-500 text-xs">123 Hill Road, Bandra West</p>
-                    <p className="text-zinc-600 text-xs">Mumbai - 400050</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-white text-sm font-semibold">Delhi - Connaught Place</p>
-                    <p className="text-zinc-500 text-xs">45 Block A, Connaught Place</p>
-                    <p className="text-zinc-600 text-xs">New Delhi - 110001</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-white text-sm font-semibold">Bangalore - Koramangala</p>
-                    <p className="text-zinc-500 text-xs">78 5th Block, Koramangala</p>
-                    <p className="text-zinc-600 text-xs">Bangalore - 560095</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Information */}
-          <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
-                  <Phone className="w-3.5 h-3.5 text-amber-400" />
-                </div>
-                <div>
-                  <p className="text-zinc-500 text-xs">Call Us</p>
-                  <a href="tel:+919876543210" className="text-white text-sm font-medium hover:text-amber-400 transition-colors">
-                    +91 98765 43210
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
-                  <Mail className="w-3.5 h-3.5 text-amber-400" />
-                </div>
-                <div>
-                  <p className="text-zinc-500 text-xs">Email Us</p>
-                  <a href="mailto:info@qrdine.com" className="text-white text-sm font-medium hover:text-amber-400 transition-colors">
-                    info@qrdine.com
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
-                  <Clock className="w-3.5 h-3.5 text-amber-400" />
-                </div>
-                <div>
-                  <p className="text-zinc-500 text-xs">Opening Hours</p>
-                  <p className="text-white text-sm font-medium">Mon - Sun: 11 AM - 11 PM</p>
-                </div>
-              </li>
-            </ul>
+            <h4 className="text-slate-900 font-bold mb-3 text-xs uppercase tracking-wider">Follow Us</h4>
+            <p className="text-xs text-slate-500 mb-3">Stay updated with our daily chef specials and seasonal promotions.</p>
+            <div className="flex gap-2.5">
+              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 transition-colors">
+                <Facebook className="w-3.5 h-3.5" />
+              </a>
+              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 transition-colors">
+                <Instagram className="w-3.5 h-3.5" />
+              </a>
+              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 transition-colors">
+                <Twitter className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-zinc-800/60 mt-10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-zinc-500 text-xs text-center md:text-left">
-              © 2024 QRDine. All rights reserved. Smart Restaurant Platform.
-            </p>
-            <div className="flex gap-6 text-xs">
-              <a href="#" className="text-zinc-500 hover:text-amber-400 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-zinc-500 hover:text-amber-400 transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-zinc-500 hover:text-amber-400 transition-colors">
-                Cookie Policy
-              </a>
-            </div>
-          </div>
+        <div className="border-t border-slate-100 mt-8 pt-6 text-center text-xs text-slate-400">
+          <p>© {new Date().getFullYear()} QRDine. All rights reserved. Clean Contactless Table Dining.</p>
         </div>
       </div>
     </footer>

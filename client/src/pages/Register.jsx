@@ -17,7 +17,7 @@ import { register } from '../redux/authSlice';
 import AuthBrandPanel from '../components/AuthBrandPanel';
 
 const inputClass =
-  'w-full pl-11 pr-4 py-3.5 bg-zinc-950 border border-zinc-800 rounded-2xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-400/35 focus:border-amber-400/50 transition-all duration-200 text-sm';
+  'w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white transition-all duration-200 text-sm';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -76,37 +76,35 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0c0b] flex flex-col lg:flex-row">
-      <div className="w-full lg:w-[54%] flex items-center justify-center px-5 py-10 sm:px-10 relative order-2 lg:order-1">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(251,191,36,0.06),transparent_40%)] pointer-events-none" />
-
+    <div className="min-h-screen bg-slate-50 flex flex-col lg:flex-row">
+      <div className="w-full lg:w-[54%] flex items-center justify-center px-5 py-10 sm:px-10 relative order-2 lg:order-1 bg-white">
         <div className="w-full max-w-[480px] relative z-10">
           <div className="lg:hidden flex items-center gap-3 mb-8">
-            <div className="w-11 h-11 rounded-2xl bg-amber-400 flex items-center justify-center">
-              <QrCode className="w-5 h-5 text-zinc-950" />
+            <div className="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md shadow-emerald-600/20">
+              <QrCode className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-xl font-black tracking-tight text-white">QRDine</h1>
-              <p className="text-[10px] text-amber-400 font-bold uppercase tracking-[0.2em]">
-                Contactless dining
+              <h1 className="text-xl font-black tracking-tight text-slate-900">QRDine</h1>
+              <p className="text-[10px] text-emerald-700 font-bold uppercase tracking-[0.2em]">
+                Smart dining
               </p>
             </div>
           </div>
 
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400 mb-2">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700 mb-2">
             Join QRDine
           </p>
-          <h2 className="text-3xl font-black text-white tracking-tight">Create your account</h2>
-          <p className="text-sm text-zinc-400 mt-2 mb-8">
-            Faster checkout, saved favorites, and rewards on every table order.
+          <h2 className="text-3xl font-black text-slate-900 tracking-tight">Create your account</h2>
+          <p className="text-sm text-slate-500 mt-2 mb-8">
+            Faster checkout, saved favorites, and loyalty rewards on every table order.
           </p>
 
           {(validationError || error) && (
-            <div className="mb-6 p-4 bg-red-500/8 border border-red-500/20 rounded-2xl flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-red-500/15 flex items-center justify-center shrink-0">
-                <span className="text-red-400 text-sm font-bold">!</span>
+            <div className="mb-6 p-4 bg-rose-50 border border-rose-200 rounded-2xl flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center shrink-0">
+                <span className="text-rose-600 text-sm font-bold">!</span>
               </div>
-              <p className="text-red-400 text-sm">{validationError || error}</p>
+              <p className="text-rose-600 text-sm font-medium">{validationError || error}</p>
             </div>
           )}
 
@@ -115,13 +113,13 @@ const Register = () => {
               <div>
                 <label
                   htmlFor="reg-name"
-                  className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                  className="block mb-2 text-xs font-bold text-slate-700 uppercase tracking-wider"
                 >
                   Full name
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <User className="h-4 w-4 text-zinc-500 group-focus-within:text-amber-400 transition-colors" />
+                    <User className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
                   </div>
                   <input
                     type="text"
@@ -139,13 +137,13 @@ const Register = () => {
               <div>
                 <label
                   htmlFor="reg-email"
-                  className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                  className="block mb-2 text-xs font-bold text-slate-700 uppercase tracking-wider"
                 >
                   Email
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Mail className="h-4 w-4 text-zinc-500 group-focus-within:text-amber-400 transition-colors" />
+                    <Mail className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
                   </div>
                   <input
                     type="email"
@@ -164,13 +162,13 @@ const Register = () => {
             <div>
               <label
                 htmlFor="reg-phone"
-                className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                className="block mb-2 text-xs font-bold text-slate-700 uppercase tracking-wider"
               >
-                Phone
+                Phone (Optional)
               </label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Phone className="h-4 w-4 text-zinc-500 group-focus-within:text-amber-400 transition-colors" />
+                  <Phone className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
                 </div>
                 <input
                   type="tel"
@@ -189,13 +187,13 @@ const Register = () => {
               <div>
                 <label
                   htmlFor="reg-password"
-                  className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                  className="block mb-2 text-xs font-bold text-slate-700 uppercase tracking-wider"
                 >
                   Password
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Lock className="h-4 w-4 text-zinc-500 group-focus-within:text-amber-400 transition-colors" />
+                    <Lock className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
                   </div>
                   <input
                     type={showPassword ? 'text' : 'password'}
@@ -210,7 +208,7 @@ const Register = () => {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-zinc-500 hover:text-zinc-300 transition-colors"
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
@@ -220,13 +218,13 @@ const Register = () => {
               <div>
                 <label
                   htmlFor="reg-confirm-password"
-                  className="block mb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider"
+                  className="block mb-2 text-xs font-bold text-slate-700 uppercase tracking-wider"
                 >
-                  Confirm
+                  Confirm Password
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Shield className="h-4 w-4 text-zinc-500 group-focus-within:text-amber-400 transition-colors" />
+                    <Shield className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
                   </div>
                   <input
                     type={showConfirmPassword ? 'text' : 'password'}
@@ -241,7 +239,7 @@ const Register = () => {
                   <button
                     type="button"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-zinc-500 hover:text-zinc-300 transition-colors"
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
                   >
                     {showConfirmPassword ? (
                       <EyeOff className="w-4 h-4" />
@@ -253,28 +251,10 @@ const Register = () => {
               </div>
             </div>
 
-            <div className="flex items-start pt-1 gap-2">
-              <input
-                id="terms-reg"
-                type="checkbox"
-                className="mt-0.5 w-4 h-4 bg-zinc-950 border-zinc-700 rounded focus:ring-2 focus:ring-amber-400/40 accent-amber-400"
-              />
-              <label htmlFor="terms-reg" className="text-xs text-zinc-400 leading-relaxed">
-                I agree to QRDine&apos;s{' '}
-                <a href="#" className="text-amber-400 hover:text-amber-300 font-medium">
-                  Terms
-                </a>{' '}
-                and{' '}
-                <a href="#" className="text-amber-400 hover:text-amber-300 font-medium">
-                  Privacy Policy
-                </a>
-              </label>
-            </div>
-
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-4 bg-amber-400 hover:bg-amber-300 text-zinc-950 font-bold rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-400/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-lg shadow-amber-400/15 active:scale-[0.98]"
+              className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-md shadow-emerald-600/20 active:scale-[0.98] cursor-pointer mt-2"
             >
               {loading ? (
                 <>
@@ -284,15 +264,15 @@ const Register = () => {
               ) : (
                 <>
                   <UserPlus className="w-4 h-4" />
-                  <span>Join QRDine</span>
+                  <span>Create Account</span>
                 </>
               )}
             </button>
           </form>
 
-          <p className="mt-8 text-sm text-zinc-500 text-center">
+          <p className="mt-8 text-sm text-slate-600 text-center">
             Already have an account?{' '}
-            <Link to="/login" className="text-amber-400 hover:text-amber-300 font-semibold">
+            <Link to="/login" className="text-emerald-700 hover:text-emerald-800 font-bold">
               Sign in
             </Link>
           </p>
@@ -303,11 +283,11 @@ const Register = () => {
         <AuthBrandPanel
           headline={
             <>
-              Join the table.
-              <span className="block text-amber-400">Join QRDine.</span>
+              Fresh Food.
+              <span className="block text-emerald-300">Seamless Tabletop Ordering.</span>
             </>
           }
-          subhead="Create a free account and get welcome offers, loyalty points, and quicker ordering at every QRDine table."
+          subhead="Register to enjoy special chef discounts, track dine-in receipts, and access express contactless checkout."
         />
       </div>
     </div>
