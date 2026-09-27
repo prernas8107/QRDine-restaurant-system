@@ -1,14 +1,17 @@
-import nodemailer from "nodemailer"
+import nodemailer from 'nodemailer';
 
-// Create a test account or replace with real credentials.
+// Robust Nodemailer transport configuration optimized for cloud deployment (Render)
 const transporter = nodemailer.createTransport({
-  
-  service : "gmail",
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, // true for 465, false for other ports
   auth: {
-    user: "prernas8107@gmail.com",
-    pass: "qdmb jcyg wymi wxny",
+    user: process.env.EMAIL_USER || 'prernas8107@gmail.com',
+    pass: process.env.EMAIL_PASS || 'qdmb jcyg wymi wxny',
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
-
 
 export default transporter;
