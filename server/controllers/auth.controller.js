@@ -2,8 +2,6 @@ import User from '../models/user.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { generateAccessToken, generateRefreshToken } from '../utils/jwt.js';
-import transporter from '../services/emailService.js';
-import registerTemplate from '../services/emailTemplates/registerTemplate.js';
 
 export const register = async (req, res) => {
   try {
@@ -26,18 +24,6 @@ export const register = async (req, res) => {
     const passwordHash = await bcrypt.hash(password, 12);
     const data = { name, email, phone, passwordHash, role: 'customer' };
     const newUser = await User.create(data);
-
-    // try sending welcome email safely in the background
-    transporter
-      .sendMail({
-        from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
-        to: newUser.email,
-        subject: 'User registration',
-        text: registerTemplate(newUser.name, 'QRDine'),
-      })
-      .catch((emailErr) => {
-        console.warn('Welcome email could not be sent:', emailErr.message);
-      });
 
     const userObj = newUser.toObject();
     delete userObj.passwordHash;
