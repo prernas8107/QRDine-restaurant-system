@@ -51,6 +51,18 @@ export const bootstrapAppData = async () => {
       });
     }
     console.log('Seeded 6 tables with QR codes');
+  } else {
+    // Auto-fix table QR URLs if pointing to localhost/local IP
+    const tables = await Table.find();
+    for (const table of tables) {
+      if (!table.qrCodeURL || table.qrCodeURL.includes('localhost') || table.qrCodeURL.includes('192.168.')) {
+        const qrCodeURL = buildTableQrUrl(table.qrSlug);
+        const qrImage = await toQrImage(qrCodeURL);
+        table.qrCodeURL = qrCodeURL;
+        table.qrImage = qrImage;
+        await table.save();
+      }
+    }
   }
 
   if ((await Menu.countDocuments()) === 0 && menuItems?.length) {
