@@ -63,7 +63,7 @@ export const createOrder = async (req, res) => {
     if (customerEmail) {
       transporter
         .sendMail({
-          from: process.env.EMAIL_USER || 'prernas8107@gmail.com',
+          from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
           to: customerEmail,
           subject: `Order Confirmation #${order._id.toString().slice(-6).toUpperCase()}`,
           text: orderTemplate(customerName, order._id, tableNumber, items, finalAmount || totalAmount),

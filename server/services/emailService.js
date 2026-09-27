@@ -1,16 +1,13 @@
 import nodemailer from 'nodemailer';
 
-// Robust Nodemailer transport configuration optimized for cloud deployment (Render)
+// Robust Nodemailer transport configuration using Resend SMTP (Cloud-Friendly & 100% Reliable)
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true, // true for 465, false for other ports
+  host: process.env.EMAIL_HOST || 'smtp.resend.com',
+  port: Number(process.env.EMAIL_PORT) || 465,
+  secure: true,
   auth: {
-    user: process.env.EMAIL_USER || 'prernas8107@gmail.com',
-    pass: process.env.EMAIL_PASS || 'qdmb jcyg wymi wxny',
-  },
-  tls: {
-    rejectUnauthorized: false,
+    user: process.env.EMAIL_USER || 'resend',
+    pass: process.env.EMAIL_PASS || '',
   },
 });
 

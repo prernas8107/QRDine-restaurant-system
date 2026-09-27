@@ -30,7 +30,7 @@ export const register = async (req, res) => {
     // try sending welcome email safely in the background
     transporter
       .sendMail({
-        from: process.env.EMAIL_USER || 'prernas8107@gmail.com',
+        from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
         to: newUser.email,
         subject: 'User registration',
         text: registerTemplate(newUser.name, 'QRDine'),
