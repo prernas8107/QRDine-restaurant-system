@@ -1,6 +1,8 @@
 import Order from '../models/order.js';
 import User from '../models/user.js';
 import Cart from '../models/cart.js';
+import transporter from '../services/emailService.js';
+import orderTemplate from '../services/emailTemplates/orderTemplate.js';
 
 export const createOrder = async (req, res) => {
   try {
@@ -30,10 +32,15 @@ export const createOrder = async (req, res) => {
 
     await order.save();
 
+    let customerEmail = null;
+    let customerName = 'Valued Customer';
+
     // If registered user, update totalSpend, totalOrders, and loyaltyPoints
     if (userId) {
       const user = await User.findById(userId);
       if (user) {
+        customerEmail = user.email;
+        customerName = user.name;
         user.totalOrders = (user.totalOrders || 0) + 1;
         user.totalSpend = (user.totalSpend || 0) + (finalAmount || totalAmount || 0);
         // 1 loyalty point per 10 currency spent
@@ -47,6 +54,23 @@ export const createOrder = async (req, res) => {
         { userId },
         { $set: { items: [], totalCartPrice: 0 } }
       );
+    }
+
+    if (req.body.email) {
+      customerEmail = req.body.email;
+    }
+
+    if (customerEmail) {
+      transporter
+        .sendMail({
+          from: 'prernas8107@gmail.com',
+          to: customerEmail,
+          subject: `Order Confirmation #${order._id.toString().slice(-6).toUpperCase()}`,
+          text: orderTemplate(customerName, order._id, tableNumber, items, finalAmount || totalAmount),
+        })
+        .catch((emailErr) => {
+          console.warn('Order confirmation email could not be sent:', emailErr.message);
+        });
     }
 
     return res.status(201).json({
