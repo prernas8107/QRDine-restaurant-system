@@ -47,6 +47,7 @@ const Cart = () => {
   const [couponError, setCouponError] = useState('');
   const [placingOrder, setPlacingOrder] = useState(false);
   const [orderConfirmed, setOrderConfirmed] = useState(null);
+  const [showTestModal, setShowTestModal] = useState(false);
 
   // Totals calculations
   const subtotal = cartItems.reduce(
@@ -102,6 +103,90 @@ const Cart = () => {
       setCouponInput('');
     } else {
       setCouponError('Invalid coupon code. Try FIRST30 or FLAT50');
+    }
+  };
+
+  const handleRazorpayPayment = async () => {
+    if (cartItems.length === 0) return;
+
+    setPlacingOrder(true);
+    try {
+      const resOrder = await api.post('/payment/create-order', { amount: finalTotal });
+      const { keyId, order } = resOrder.data;
+
+      if (!window.Razorpay) {
+        await new Promise((resolve) => {
+          const script = document.createElement('script');
+          script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+          script.onload = resolve;
+          document.body.appendChild(script);
+        });
+      }
+
+      const options = {
+        key: keyId || 'rzp_test_SRcNlIyM4CBqmC',
+        amount: order.amount,
+        currency: order.currency,
+        name: 'QRDine Restaurant',
+        description: 'Table #' + tableNumber + ' Order Payment',
+        order_id: order.id,
+        handler: async function (response) {
+          try {
+            await api.post('/payment/verify', {
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+            });
+
+            const orderPayload = {
+              tableNumber: Number(tableNumber) || 1,
+              items: cartItems.map((item) => ({
+                menuItemId: item.menuItem._id || item.menuItem.id,
+                name: item.menuItem.name,
+                quantity: item.quantity,
+                price: item.menuItem.price,
+              })),
+              totalAmount: subtotal,
+              discountAmount: discount,
+              finalAmount: finalTotal,
+              coupanCode: appliedCoupon ? appliedCoupon.code : null,
+              paymentStatus: 'paid',
+            };
+
+            const res = await api.post('/orders', orderPayload);
+            const placedOrder = res.data?.data || {
+              _id: order.id,
+              tableNumber,
+              finalAmount: finalTotal,
+            };
+
+            setOrderConfirmed(placedOrder);
+            dispatch(clearCart());
+            toast.success(`Payment successful & Order placed for Table #${tableNumber}!`);
+          } catch (err) {
+            console.error('Post-payment order placement failed:', err);
+            toast.error('Payment verified but order creation failed.');
+          } finally {
+            setPlacingOrder(false);
+          }
+        },
+        prefill: {
+          name: 'Valued Guest',
+          email: 'guest@qrdine.com',
+        },
+        theme: {
+          color: '#10b981',
+        },
+      };
+
+      const rzp1 = new window.Razorpay(options);
+      rzp1.open();
+      setPlacingOrder(false);
+    } catch (err) {
+      console.error('Razorpay initialization failed:', err);
+      toast.error('Could not initiate online payment. Placing regular order...');
+      setPlacingOrder(false);
+      handlePlaceOrder();
     }
   };
 
@@ -500,6 +585,14 @@ const Cart = () => {
                   <span>➔</span>
                 </>
               )}
+            </button>
+
+            <button
+              onClick={handleRazorpayPayment}
+              disabled={placingOrder}
+              className="w-full py-3.5 px-6 bg-slate-900 hover:bg-slate-800 active:scale-[0.98] text-white font-black text-xs rounded-xl transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
+            >
+              <span>💳 Pay Online via Razorpay (₹{finalTotal})</span>
             </button>
           </div>
         </div>

@@ -11,6 +11,7 @@ import coupanRoutes from './routes/coupan.route.js';
 import cartRoutes from './routes/cart.route.js';
 import orderRoutes from './routes/order.routes.js';
 import userRoutes from './routes/user.route.js';
+import paymentRoutes from './routes/payment.route.js';
 
 dotenv.config();
 const app = express();
@@ -58,6 +59,7 @@ app.use('/api/v1', cartRoutes);
 app.use('/api/v1', coupanRoutes);
 app.use('/api/v1', orderRoutes);
 app.use('/api/v1', userRoutes);
+app.use('/api/v1', paymentRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
