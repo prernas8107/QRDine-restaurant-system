@@ -65,9 +65,23 @@ export const bootstrapAppData = async () => {
     }
   }
 
-  if ((await Menu.countDocuments()) === 0 && menuItems?.length) {
-    await Menu.insertMany(menuItems);
-    console.log(`Seeded ${menuItems.length} menu items`);
+  if (menuItems?.length) {
+    for (const item of menuItems) {
+      await Menu.findOneAndUpdate(
+        { name: item.name },
+        {
+          $set: {
+            description: item.description,
+            price: item.price,
+            category: item.category,
+            image: item.image,
+            isAvailable: item.isAvailable,
+          },
+        },
+        { upsert: true, new: true }
+      );
+    }
+    console.log(`Synchronized ${menuItems.length} menu items on startup`);
   }
 
   if ((await Coupan.countDocuments()) === 0) {
