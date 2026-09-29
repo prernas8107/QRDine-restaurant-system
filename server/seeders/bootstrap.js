@@ -52,10 +52,17 @@ export const bootstrapAppData = async () => {
     }
     console.log('Seeded 6 tables with QR codes');
   } else {
-    // Auto-fix table QR URLs if pointing to localhost/local IP
+    // Auto-fix table QR URLs if not matching live FRONTEND_URL
+    const liveFrontend = process.env.FRONTEND_URL?.replace(/\/$/, '');
     const tables = await Table.find();
     for (const table of tables) {
-      if (!table.qrCodeURL || table.qrCodeURL.includes('localhost') || table.qrCodeURL.includes('192.168.')) {
+      if (
+        !table.qrCodeURL ||
+        table.qrCodeURL.includes('localhost') ||
+        table.qrCodeURL.includes('192.168.') ||
+        table.qrCodeURL.includes('10.') ||
+        (liveFrontend && !table.qrCodeURL.startsWith(liveFrontend))
+      ) {
         const qrCodeURL = buildTableQrUrl(table.qrSlug);
         const qrImage = await toQrImage(qrCodeURL);
         table.qrCodeURL = qrCodeURL;
