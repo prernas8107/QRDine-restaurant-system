@@ -98,19 +98,19 @@ const Homepage = () => {
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
           <div className="space-y-2">
             <div className="flex items-center gap-3">
-              <span className="px-3.5 py-1.5 rounded-full bg-emerald-600 text-white font-extrabold text-xs tracking-wider uppercase flex items-center gap-2 shadow-xs">
+              <span className="px-3.5 py-1.5 rounded-full bg-orange-500 text-white font-extrabold text-xs tracking-wider uppercase flex items-center gap-2 shadow-xs">
                 <UtensilsCrossed className="w-3.5 h-3.5" />
                 Table #{tableNumber}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 text-orange-800 text-xs font-bold border border-orange-200">
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
                 Dine-In Session Active
               </span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
               Chef Crafted{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600">
                 Vegetarian Delights
               </span>
             </h2>
@@ -126,7 +126,7 @@ const Homepage = () => {
               onClick={() => setWaiterModalOpen(true)}
               className="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 text-xs font-bold flex items-center gap-2 transition-all shadow-xs active:scale-95 cursor-pointer"
             >
-              <BellRing className="w-4 h-4 text-emerald-600" />
+              <BellRing className="w-4 h-4 text-orange-500" />
               <span>Call Waiter</span>
             </button>
             <button
@@ -145,7 +145,7 @@ const Homepage = () => {
           <div>
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2.5">
               <span>Explore Menu</span>
-              <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+              <span className="text-xs font-bold text-orange-800 bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-200">
                 {menuItems.length} Dishes
               </span>
             </h3>
@@ -162,7 +162,7 @@ const Homepage = () => {
               placeholder="Search paneer, dosa, soup, desserts..."
               value={searchQuery}
               onChange={(e) => dispatch(setSearchQuery(e.target.value))}
-              className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-50 transition-all shadow-xs"
+              className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100 transition-all shadow-xs"
             />
             {searchQuery && (
               <button
@@ -185,7 +185,7 @@ const Homepage = () => {
                 onClick={() => dispatch(setSelectedCategory(cat))}
                 className={`px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
                   isSelected
-                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/20 scale-[1.02]'
+                    ? 'bg-orange-500 text-white shadow-md shadow-orange-500/20 scale-[1.02]'
                     : 'bg-white text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 shadow-2xs'
                 }`}
               >
@@ -217,7 +217,7 @@ const Homepage = () => {
           <p className="text-rose-600 font-semibold">{error}</p>
           <button
             onClick={() => dispatch(fetchMenuItems(selectedCategory))}
-            className="px-6 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition-colors shadow-xs"
+            className="px-6 py-2.5 rounded-xl bg-orange-500 text-white font-bold text-xs hover:bg-orange-600 transition-colors shadow-xs"
           >
             Retry Loading
           </button>
@@ -248,7 +248,7 @@ const Homepage = () => {
             return (
               <div
                 key={item._id}
-                className="group relative bg-white border border-slate-200/90 hover:border-emerald-300 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col justify-between"
+                className="group relative bg-white border border-slate-200/90 hover:border-orange-300 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col justify-between"
               >
                 <div>
                   {/* Dish Image */}
@@ -259,7 +259,7 @@ const Homepage = () => {
                       className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
                       onError={(e) => {
                         e.target.src =
-                          'https://placehold.co/600x400/10b981/ffffff?text=Delicious+Dish';
+                          'https://placehold.co/600x400/f97316/ffffff?text=Delicious+Dish';
                       }}
                     />
 
@@ -286,7 +286,7 @@ const Homepage = () => {
 
                     {/* Prep Time */}
                     <div className="absolute bottom-3 right-3 text-[10px] font-semibold text-slate-700 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg flex items-center gap-1 border border-slate-200 shadow-xs">
-                      <Clock className="w-3 h-3 text-emerald-600" />
+                      <Clock className="w-3 h-3 text-orange-500" />
                       <span>{item.prepTime || '10-15m'}</span>
                     </div>
                   </div>
@@ -294,7 +294,7 @@ const Homepage = () => {
                   {/* Dish Details */}
                   <div className="p-4 sm:p-5 space-y-2">
                     <div className="flex items-start justify-between gap-2">
-                      <h4 className="text-base font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                      <h4 className="text-base font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
                         {item.name}
                       </h4>
                       <span className="text-base font-black text-slate-900 whitespace-nowrap">
@@ -314,13 +314,13 @@ const Homepage = () => {
                   {qty === 0 ? (
                     <button
                       onClick={() => handleAddToCart(item)}
-                      className="w-full py-2.5 px-4 bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-xs active:scale-95 cursor-pointer"
+                      className="w-full py-2.5 px-4 bg-slate-900 hover:bg-orange-500 text-white font-bold text-xs rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-xs active:scale-95 cursor-pointer"
                     >
                       <Plus className="w-4 h-4" />
                       <span>Add to Order</span>
                     </button>
                   ) : (
-                    <div className="flex items-center justify-between bg-slate-50 border border-emerald-300 rounded-xl p-1 shadow-xs">
+                    <div className="flex items-center justify-between bg-slate-50 border border-orange-300 rounded-xl p-1 shadow-xs">
                       <button
                         onClick={() => handleDecreaseQuantity(item._id)}
                         className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 flex items-center justify-center transition-colors cursor-pointer"
@@ -329,13 +329,13 @@ const Homepage = () => {
                         <Minus className="w-3.5 h-3.5" />
                       </button>
 
-                      <span className="font-extrabold text-xs text-emerald-800 px-3">
+                      <span className="font-extrabold text-xs text-orange-800 px-3">
                         {qty} in cart
                       </span>
 
                       <button
                         onClick={() => handleAddToCart(item)}
-                        className="w-8 h-8 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center font-bold transition-colors cursor-pointer"
+                        className="w-8 h-8 rounded-lg bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center font-bold transition-colors cursor-pointer"
                         aria-label="Increase"
                       >
                         <Plus className="w-3.5 h-3.5" />
@@ -357,7 +357,7 @@ const Homepage = () => {
         >
           <div className="bg-slate-900 text-white p-4 rounded-2xl shadow-2xl flex items-center justify-between gap-4 font-bold border border-slate-700">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-md">
+              <div className="w-11 h-11 rounded-xl bg-orange-500 text-white flex items-center justify-center shadow-md">
                 <ShoppingBag className="w-5 h-5" />
               </div>
               <div>
@@ -373,7 +373,7 @@ const Homepage = () => {
 
             <button
               onClick={() => navigate('/cart')}
-              className="py-2.5 px-5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
+              className="py-2.5 px-5 bg-orange-500 hover:bg-orange-600 text-white rounded-xl text-xs font-bold transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
             >
               <span>View Cart & Order</span>
               <span>➔</span>
@@ -388,7 +388,7 @@ const Homepage = () => {
           <div className="bg-white border border-slate-200 rounded-3xl p-6 max-w-sm w-full space-y-5 shadow-2xl">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700">
+                <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-700">
                   <BellRing className="w-4 h-4" />
                 </div>
                 <h3 className="text-base font-bold text-slate-900">
@@ -418,7 +418,7 @@ const Homepage = () => {
                   key={idx}
                   onClick={() => handleCallWaiter(item.reason)}
                   disabled={waiterRequestSent}
-                  className="p-3 bg-slate-50 hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-900 border border-slate-200 rounded-xl text-left transition-colors text-xs font-semibold active:scale-95 cursor-pointer text-slate-800"
+                  className="p-3 bg-slate-50 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-900 border border-slate-200 rounded-xl text-left transition-colors text-xs font-semibold active:scale-95 cursor-pointer text-slate-800"
                 >
                   {item.title}
                 </button>
@@ -426,8 +426,8 @@ const Homepage = () => {
             </div>
 
             {waiterRequestSent && (
-              <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center gap-2 justify-center">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <div className="p-3 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold flex items-center gap-2 justify-center">
+                <CheckCircle2 className="w-4 h-4 text-orange-600" />
                 <span>Waiter Alerted! On the way.</span>
               </div>
             )}

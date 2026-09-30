@@ -53,7 +53,7 @@ const TableQRModal = ({ isOpen, onClose, currentTableNumber }) => {
       <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 max-w-xl w-full space-y-5 max-h-[85vh] flex flex-col shadow-2xl">
         <div className="flex items-center justify-between pb-3 border-b border-slate-100">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shadow-xs">
+            <div className="w-10 h-10 rounded-2xl bg-orange-50 border border-orange-200 text-orange-700 flex items-center justify-center shadow-xs">
               <QrCode className="w-5 h-5" />
             </div>
             <div>
@@ -78,7 +78,7 @@ const TableQRModal = ({ isOpen, onClose, currentTableNumber }) => {
         <div className="flex-1 overflow-y-auto space-y-3 pr-1">
           {loading ? (
             <div className="text-center py-12 text-slate-500 text-xs">
-              <Loader2 className="w-7 h-7 animate-spin mx-auto mb-2 text-emerald-600" />
+              <Loader2 className="w-7 h-7 animate-spin mx-auto mb-2 text-orange-500" />
               Loading restaurant tables...
             </div>
           ) : tables.length === 0 ? (
@@ -95,7 +95,7 @@ const TableQRModal = ({ isOpen, onClose, currentTableNumber }) => {
                     key={t._id}
                     className={`p-4 rounded-2xl border transition-all flex flex-col justify-between gap-3 ${
                       isCurrent
-                        ? 'bg-emerald-50/70 border-emerald-300 shadow-xs'
+                        ? 'bg-orange-50/70 border-orange-300 shadow-xs'
                         : 'bg-slate-50/70 border-slate-200 hover:border-slate-300'
                     }`}
                   >
@@ -106,7 +106,7 @@ const TableQRModal = ({ isOpen, onClose, currentTableNumber }) => {
                             Table #{t.tableNumber}
                           </h4>
                           {isCurrent && (
-                            <span className="text-[10px] bg-emerald-600 text-white font-bold px-2 py-0.5 rounded-full">
+                            <span className="text-[10px] bg-orange-500 text-white font-bold px-2 py-0.5 rounded-full">
                               Active
                             </span>
                           )}
@@ -131,7 +131,7 @@ const TableQRModal = ({ isOpen, onClose, currentTableNumber }) => {
                         onClick={() => handleSelectTable(t)}
                         className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                           isCurrent
-                            ? 'bg-emerald-600 text-white shadow-xs'
+                            ? 'bg-orange-500 text-white shadow-xs'
                             : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200'
                         }`}
                       >
@@ -142,7 +142,7 @@ const TableQRModal = ({ isOpen, onClose, currentTableNumber }) => {
                         href={`/welcome?qr=${t.qrSlug}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="py-2 px-3 bg-white hover:bg-emerald-50 hover:text-emerald-700 text-slate-700 border border-slate-200 rounded-xl text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer"
+                        className="py-2 px-3 bg-white hover:bg-orange-50 hover:text-orange-700 text-slate-700 border border-slate-200 rounded-xl text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer"
                         title="Simulate Mobile Scan"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />

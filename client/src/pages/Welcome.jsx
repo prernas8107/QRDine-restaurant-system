@@ -106,11 +106,11 @@ const Welcome = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between relative overflow-hidden font-sans selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between relative overflow-hidden font-sans selection:bg-orange-100 selection:text-orange-900">
       {/* Background Soft Glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-emerald-100/50 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-teal-100/40 rounded-full blur-[120px]" />
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-orange-100/50 rounded-full blur-[120px]" />
+        <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-amber-100/40 rounded-full blur-[120px]" />
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -135,7 +135,7 @@ const Welcome = () => {
           </Link>
           <Link
             to="/register"
-            className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-all"
+            className="px-4 py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white shadow-xs transition-all"
           >
             Join Rewards
           </Link>
@@ -148,9 +148,9 @@ const Welcome = () => {
         <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
           {/* Header section */}
           <div className="text-center space-y-2.5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <QrCode className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+              <QrCode className="w-3.5 h-3.5 text-orange-500" />
               <span>Smart Table Connected</span>
             </div>
 
@@ -170,7 +170,7 @@ const Welcome = () => {
           {/* Table Selector Box */}
           <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-between">
             <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-800 font-black text-xl shadow-xs">
+              <div className="w-12 h-12 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-800 font-black text-xl shadow-xs">
                 {tableData ? tableData.tableNumber : selectedTableNumber}
               </div>
               <div>
@@ -184,15 +184,15 @@ const Welcome = () => {
             </div>
 
             {tableData ? (
-              <div className="flex items-center gap-1.5 text-xs text-emerald-800 font-bold bg-emerald-100 px-3 py-1.5 rounded-full border border-emerald-200">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+              <div className="flex items-center gap-1.5 text-xs text-orange-800 font-bold bg-orange-100 px-3 py-1.5 rounded-full border border-orange-200">
+                <CheckCircle2 className="w-3.5 h-3.5 text-orange-700" />
                 <span>Verified</span>
               </div>
             ) : availableTables.length > 0 ? (
               <select
                 value={selectedTableNumber}
                 onChange={(e) => setSelectedTableNumber(e.target.value)}
-                className="bg-white border border-slate-300 text-xs font-bold text-slate-900 rounded-xl px-3 py-2 focus:outline-none focus:border-emerald-600 cursor-pointer shadow-xs"
+                className="bg-white border border-slate-300 text-xs font-bold text-slate-900 rounded-xl px-3 py-2 focus:outline-none focus:border-orange-500 cursor-pointer shadow-xs"
               >
                 {availableTables.map((t) => (
                   <option key={t._id} value={t.tableNumber}>
@@ -211,7 +211,7 @@ const Welcome = () => {
           <button
             onClick={handleStartDineIn}
             disabled={startingSession || loadingTable}
-            className="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base rounded-2xl transition-all shadow-md shadow-emerald-600/20 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 cursor-pointer"
+            className="w-full py-4 px-6 bg-orange-500 hover:bg-orange-600 text-white font-black text-base rounded-2xl transition-all shadow-md shadow-orange-500/20 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 cursor-pointer"
           >
             {startingSession ? (
               <>
@@ -229,17 +229,17 @@ const Welcome = () => {
           {/* Perks Row */}
           <div className="grid grid-cols-3 gap-2.5 pt-3 border-t border-slate-100 text-center">
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
-              <Zap className="w-4 h-4 text-emerald-600 mx-auto mb-1" />
+              <Zap className="w-4 h-4 text-orange-500 mx-auto mb-1" />
               <p className="text-[10px] font-bold text-slate-900">Zero Waiting</p>
               <p className="text-[9px] text-slate-500">Kitchen Alert</p>
             </div>
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
-              <Sparkles className="w-4 h-4 text-emerald-600 mx-auto mb-1" />
+              <Sparkles className="w-4 h-4 text-orange-500 mx-auto mb-1" />
               <p className="text-[10px] font-bold text-slate-900">30% OFF Code</p>
               <p className="text-[9px] text-slate-500 font-semibold">FIRST30</p>
             </div>
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
-              <ShieldCheck className="w-4 h-4 text-emerald-600 mx-auto mb-1" />
+              <ShieldCheck className="w-4 h-4 text-orange-500 mx-auto mb-1" />
               <p className="text-[10px] font-bold text-slate-900">100% Pure Veg</p>
               <p className="text-[9px] text-slate-500">Fresh Flavors</p>
             </div>

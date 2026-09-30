@@ -25,7 +25,7 @@ function FindYourAccount() {
         </Link>
 
         <div className="space-y-2 text-center">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 mx-auto flex items-center justify-center mb-3">
+          <div className="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-200 text-orange-700 mx-auto flex items-center justify-center mb-3">
             <Search className="w-5 h-5" />
           </div>
           <h1 className="text-2xl font-black text-slate-900">Find Your Account</h1>
@@ -35,9 +35,9 @@ function FindYourAccount() {
         </div>
 
         {submitted ? (
-          <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-2">
-            <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto" />
-            <p className="text-sm font-bold text-emerald-900">Search Request Sent</p>
+          <div className="p-4 rounded-2xl bg-orange-50 border border-orange-200 text-center space-y-2">
+            <CheckCircle2 className="w-8 h-8 text-orange-600 mx-auto" />
+            <p className="text-sm font-bold text-orange-900">Search Request Sent</p>
             <p className="text-xs text-slate-600">
               If an account with <b>{email}</b> exists, you will receive password reset instructions.
             </p>
@@ -58,7 +58,7 @@ function FindYourAccount() {
                 Your Email Address
               </label>
               <div className="relative group">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-600">
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-orange-500">
                   <Mail className="w-4 h-4" />
                 </div>
                 <input
@@ -68,14 +68,14 @@ function FindYourAccount() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="your.email@example.com"
-                  className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors"
+                  className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:bg-white transition-colors"
                 />
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold text-xs rounded-xl transition-all shadow-md shadow-emerald-600/20 cursor-pointer"
+              className="w-full py-3.5 px-4 bg-orange-500 hover:bg-orange-600 active:scale-95 text-white font-bold text-xs rounded-xl transition-all shadow-md shadow-orange-500/20 cursor-pointer"
             >
               Search Account
             </button>

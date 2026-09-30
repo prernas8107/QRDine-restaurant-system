@@ -1,5 +1,6 @@
 import React from 'react';
-import { QrCode, MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Youtube, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Youtube, Sparkles } from 'lucide-react';
+import { Logo } from './Logo';
 
 const Footer = () => {
   return (
@@ -9,17 +10,17 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Special Offer */}
-            <div className="bg-white border border-emerald-200 rounded-2xl p-6 text-center shadow-xs">
-              <div className="text-3xl font-black text-emerald-600 mb-1">30% OFF</div>
+            <div className="bg-white border border-orange-200 rounded-2xl p-6 text-center shadow-xs">
+              <div className="text-3xl font-black text-orange-500 mb-1">30% OFF</div>
               <p className="text-slate-900 text-sm font-bold">On your first order</p>
-              <p className="text-emerald-700 text-xs mt-1 font-semibold">Use code: FIRST30</p>
+              <p className="text-orange-700 text-xs mt-1 font-semibold">Use code: FIRST30</p>
             </div>
 
             {/* Fast Table Service */}
-            <div className="bg-white border border-teal-200 rounded-2xl p-6 text-center shadow-xs">
-              <div className="text-3xl font-black text-teal-600 mb-1">FAST</div>
+            <div className="bg-white border border-amber-200 rounded-2xl p-6 text-center shadow-xs">
+              <div className="text-3xl font-black text-amber-500 mb-1">FAST</div>
               <p className="text-slate-900 text-sm font-bold">10-15 Min Table Delivery</p>
-              <p className="text-teal-700 text-xs mt-1 font-semibold">Zero wait time at table</p>
+              <p className="text-amber-700 text-xs mt-1 font-semibold">Zero wait time at table</p>
             </div>
 
             {/* Pure Veg */}
@@ -37,15 +38,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center shadow-xs text-white">
-                <QrCode className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-base font-black text-slate-900">QRDine</h4>
-                <p className="text-[10px] text-emerald-700 uppercase tracking-wider font-bold">Smart Restaurant Platform</p>
-              </div>
-            </div>
+            <Logo showText={true} subtitle="Smart Restaurant Platform" />
             <p className="text-xs text-slate-500 leading-relaxed">
               Serving authentic gourmet vegetarian recipes with seamless QR table ordering and instant kitchen dispatch.
             </p>
@@ -56,15 +49,15 @@ const Footer = () => {
             <h4 className="text-slate-900 font-bold mb-3 text-xs uppercase tracking-wider">Contact & Location</h4>
             <div className="space-y-2 text-xs text-slate-600">
               <p className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                <MapPin className="w-3.5 h-3.5 text-orange-500" />
                 <span>Fine Dining Plaza, City Center</span>
               </p>
               <p className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-emerald-600" />
+                <Phone className="w-3.5 h-3.5 text-orange-500" />
                 <span>+91 98765 43210</span>
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-emerald-600" />
+                <Mail className="w-3.5 h-3.5 text-orange-500" />
                 <span>support@qrdine.com</span>
               </p>
             </div>
@@ -86,13 +79,13 @@ const Footer = () => {
             <h4 className="text-slate-900 font-bold mb-3 text-xs uppercase tracking-wider">Follow Us</h4>
             <p className="text-xs text-slate-500 mb-3">Stay updated with our daily chef specials and seasonal promotions.</p>
             <div className="flex gap-2.5">
-              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 transition-colors">
+              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-orange-700 hover:bg-orange-50 transition-colors">
                 <Facebook className="w-3.5 h-3.5" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 transition-colors">
+              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-orange-700 hover:bg-orange-50 transition-colors">
                 <Instagram className="w-3.5 h-3.5" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 transition-colors">
+              <a href="#" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-orange-700 hover:bg-orange-50 transition-colors">
                 <Twitter className="w-3.5 h-3.5" />
               </a>
             </div>

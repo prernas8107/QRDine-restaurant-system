@@ -16,7 +16,7 @@ import AuthBrandPanel from '../components/AuthBrandPanel';
 import { Logo } from '../components/Logo';
 
 const inputClass =
-  'w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white transition-all duration-200 text-sm';
+  'w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 focus:bg-white transition-all duration-200 text-sm';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -64,7 +64,7 @@ const Login = () => {
           headline={
             <>
               Scan. Order.
-              <span className="block text-emerald-300">Dine with Ease.</span>
+              <span className="block text-orange-300">Dine with Ease.</span>
             </>
           }
           subhead="Sign in to save favorite dishes, collect loyalty discounts, and send orders straight to the kitchen from your table."
@@ -77,7 +77,7 @@ const Login = () => {
             <Logo showText={true} subtitle="Smart Dining" />
           </div>
 
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700 mb-2">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-700 mb-2">
             Member access
           </p>
           <h2 className="text-3xl font-black text-slate-900 tracking-tight">Welcome back</h2>
@@ -86,11 +86,11 @@ const Login = () => {
           </p>
 
           {successMsg && !error && (
-            <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+            <div className="mb-6 p-4 bg-orange-50 border border-orange-200 rounded-2xl flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-4 h-4 text-orange-700" />
               </div>
-              <p className="text-emerald-800 text-sm font-medium">{successMsg}</p>
+              <p className="text-orange-800 text-sm font-medium">{successMsg}</p>
             </div>
           )}
 
@@ -113,7 +113,7 @@ const Login = () => {
               </label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+                  <Mail className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
                 </div>
                 <input
                   type="email"
@@ -137,7 +137,7 @@ const Login = () => {
               </label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Lock className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+                  <Lock className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
                 </div>
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -164,7 +164,7 @@ const Login = () => {
                 <input
                   id="remember-login"
                   type="checkbox"
-                  className="w-4 h-4 bg-white border-slate-300 rounded focus:ring-2 focus:ring-emerald-500/30 accent-emerald-600"
+                  className="w-4 h-4 bg-white border-slate-300 rounded focus:ring-2 focus:ring-orange-500/30 accent-orange-500"
                 />
                 <label htmlFor="remember-login" className="text-xs text-slate-600 font-medium cursor-pointer">
                   Remember me
@@ -172,7 +172,7 @@ const Login = () => {
               </div>
               <Link
                 to="/recovery"
-                className="text-xs text-emerald-700 hover:text-emerald-800 font-bold transition-colors"
+                className="text-xs text-orange-700 hover:text-orange-800 font-bold transition-colors"
               >
                 Forgot password?
               </Link>
@@ -181,7 +181,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-md shadow-emerald-600/20 active:scale-[0.98] cursor-pointer"
+              className="w-full py-3.5 px-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-md shadow-orange-500/20 active:scale-[0.98] cursor-pointer"
             >
               {loading ? (
                 <>
@@ -199,13 +199,13 @@ const Login = () => {
 
           <p className="mt-8 text-sm text-slate-600 text-center">
             New to QRDine?{' '}
-            <Link to="/register" className="text-emerald-700 hover:text-emerald-800 font-bold">
+            <Link to="/register" className="text-orange-700 hover:text-orange-800 font-bold">
               Create an account
             </Link>
           </p>
           <p className="mt-3 text-center text-[11px] text-slate-400">
             Or continue as{' '}
-            <Link to="/welcome" className="text-slate-600 hover:text-emerald-700 font-semibold">
+            <Link to="/welcome" className="text-slate-600 hover:text-orange-700 font-semibold">
               Guest (QR scan)
             </Link>
           </p>

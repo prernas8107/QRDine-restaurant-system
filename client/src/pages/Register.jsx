@@ -18,7 +18,7 @@ import AuthBrandPanel from '../components/AuthBrandPanel';
 import { Logo } from '../components/Logo';
 
 const inputClass =
-  'w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white transition-all duration-200 text-sm';
+  'w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 focus:bg-white transition-all duration-200 text-sm';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -84,7 +84,7 @@ const Register = () => {
             <Logo showText={true} subtitle="Smart Dining" />
           </div>
 
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700 mb-2">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-700 mb-2">
             Join QRDine
           </p>
           <h2 className="text-3xl font-black text-slate-900 tracking-tight">Create your account</h2>
@@ -112,7 +112,7 @@ const Register = () => {
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <User className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+                    <User className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
                   </div>
                   <input
                     type="text"
@@ -136,7 +136,7 @@ const Register = () => {
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Mail className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+                    <Mail className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
                   </div>
                   <input
                     type="email"
@@ -161,7 +161,7 @@ const Register = () => {
               </label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Phone className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+                  <Phone className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
                 </div>
                 <input
                   type="tel"
@@ -186,7 +186,7 @@ const Register = () => {
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Lock className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+                    <Lock className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
                   </div>
                   <input
                     type={showPassword ? 'text' : 'password'}
@@ -217,7 +217,7 @@ const Register = () => {
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Shield className="h-4 w-4 text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+                    <Shield className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
                   </div>
                   <input
                     type={showConfirmPassword ? 'text' : 'password'}
@@ -247,7 +247,7 @@ const Register = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-md shadow-emerald-600/20 active:scale-[0.98] cursor-pointer mt-2"
+              className="w-full py-3.5 px-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm shadow-md shadow-orange-500/20 active:scale-[0.98] cursor-pointer mt-2"
             >
               {loading ? (
                 <>
@@ -265,7 +265,7 @@ const Register = () => {
 
           <p className="mt-8 text-sm text-slate-600 text-center">
             Already have an account?{' '}
-            <Link to="/login" className="text-emerald-700 hover:text-emerald-800 font-bold">
+            <Link to="/login" className="text-orange-700 hover:text-orange-800 font-bold">
               Sign in
             </Link>
           </p>
@@ -277,7 +277,7 @@ const Register = () => {
           headline={
             <>
               Fresh Food.
-              <span className="block text-emerald-300">Seamless Tabletop Ordering.</span>
+              <span className="block text-orange-300">Seamless Tabletop Ordering.</span>
             </>
           }
           subhead="Register to enjoy special chef discounts, track dine-in receipts, and access express contactless checkout."

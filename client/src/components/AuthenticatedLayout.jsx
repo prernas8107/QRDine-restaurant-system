@@ -44,7 +44,7 @@ const AuthenticatedLayout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-orange-100 selection:text-orange-900">
       {/* Sticky Header */}
       <header className="sticky top-0 z-40 bg-white/90 border-b border-slate-200/80 backdrop-blur-xl shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,15 +60,15 @@ const AuthenticatedLayout = ({ children }) => {
             {/* Table Badge & QR Switcher */}
             <button
               onClick={() => setIsTableModalOpen(true)}
-              className="px-3.5 py-1.5 sm:py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center gap-2 transition-all shrink-0 active:scale-95 cursor-pointer shadow-xs"
+              className="px-3.5 py-1.5 sm:py-2 rounded-xl bg-orange-50 hover:bg-orange-100 border border-orange-200 text-orange-800 text-xs font-bold flex items-center gap-2 transition-all shrink-0 active:scale-95 cursor-pointer shadow-xs"
               title="View all tables & QR codes"
             >
               <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
               </span>
               <span>Table #{tableNumber}</span>
-              <span className="hidden md:inline text-[10px] text-emerald-600 font-semibold">
+              <span className="hidden md:inline text-[10px] text-orange-600 font-semibold">
                 (Switch)
               </span>
             </button>
@@ -82,7 +82,7 @@ const AuthenticatedLayout = ({ children }) => {
                   placeholder="Search dishes, desserts, drinks..."
                   value={searchQuery}
                   onChange={(e) => dispatch(setSearchQuery(e.target.value))}
-                  className="w-full pl-10 pr-9 py-2 bg-slate-100/80 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition-all shadow-xs"
+                  className="w-full pl-10 pr-9 py-2 bg-slate-100/80 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:bg-white transition-all shadow-xs"
                 />
                 {searchQuery && (
                   <button
@@ -102,7 +102,7 @@ const AuthenticatedLayout = ({ children }) => {
                 to="/scan"
                 className="hidden lg:flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200/80 border border-slate-200 text-slate-700 text-xs font-bold transition-colors"
               >
-                <QrCode className="w-4 h-4 text-emerald-600" />
+                <QrCode className="w-4 h-4 text-orange-500" />
                 <span>QR Scanner</span>
               </Link>
 
@@ -114,7 +114,7 @@ const AuthenticatedLayout = ({ children }) => {
               >
                 <ShoppingCart className="w-5 h-5 text-slate-800" />
                 {totalCartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-emerald-600 text-white text-[10px] font-black rounded-full w-5 h-5 flex items-center justify-center shadow-md shadow-emerald-600/30 animate-pulse">
+                  <span className="absolute -top-1.5 -right-1.5 bg-orange-500 text-white text-[10px] font-black rounded-full w-5 h-5 flex items-center justify-center shadow-md shadow-orange-500/30 animate-pulse">
                     {totalCartCount}
                   </span>
                 )}
@@ -126,7 +126,7 @@ const AuthenticatedLayout = ({ children }) => {
                   onClick={() => setIsProfileOpen(!isProfileOpen)}
                   className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-colors cursor-pointer"
                 >
-                  <div className="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+                  <div className="w-6 h-6 rounded-lg bg-orange-100 text-orange-800 flex items-center justify-center font-bold text-xs">
                     {name ? name[0].toUpperCase() : <User className="w-3.5 h-3.5" />}
                   </div>
                   <span className="text-xs font-bold text-slate-800 hidden sm:inline">
@@ -153,7 +153,7 @@ const AuthenticatedLayout = ({ children }) => {
                         <p className="text-[11px] text-slate-500 truncate">
                           {email || `Table #${tableNumber} Session`}
                         </p>
-                        <span className="inline-block mt-1.5 text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        <span className="inline-block mt-1.5 text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-orange-50 text-orange-700 border border-orange-200">
                           {name ? 'Verified Customer' : 'Dine-In Guest'}
                         </span>
                       </div>
@@ -165,7 +165,7 @@ const AuthenticatedLayout = ({ children }) => {
                         }}
                         className="w-full flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-colors cursor-pointer"
                       >
-                        <QrCode className="w-4 h-4 text-emerald-600" />
+                        <QrCode className="w-4 h-4 text-orange-500" />
                         <span>View Table QR Codes</span>
                       </button>
 
@@ -174,7 +174,7 @@ const AuthenticatedLayout = ({ children }) => {
                           <Link
                             to="/login"
                             onClick={() => setIsProfileOpen(false)}
-                            className="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-emerald-700 hover:bg-emerald-50 rounded-xl transition-colors"
+                            className="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-orange-700 hover:bg-orange-50 rounded-xl transition-colors"
                           >
                             <User className="w-4 h-4" />
                             <span>Login for Rewards</span>
@@ -184,7 +184,7 @@ const AuthenticatedLayout = ({ children }) => {
                             onClick={() => setIsProfileOpen(false)}
                             className="w-full flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-colors"
                           >
-                            <Sparkles className="w-4 h-4 text-emerald-600" />
+                            <Sparkles className="w-4 h-4 text-orange-500" />
                             <span>Join VIP Club (30% Off)</span>
                           </Link>
                         </>

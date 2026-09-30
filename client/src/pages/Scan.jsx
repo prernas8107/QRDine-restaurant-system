@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import api from '../lib/api';
+import { Logo } from '../components/Logo';
 
 const Scan = () => {
   const navigate = useNavigate();
@@ -90,15 +91,10 @@ const Scan = () => {
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Home</span>
           </Link>
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-xs">
-              <QrCode className="w-4 h-4" />
-            </div>
-            <span className="font-black text-slate-900 text-base">QRDine Scanner</span>
-          </div>
+          <Logo size="sm" showText={true} subtitle="Scanner" />
           <Link
             to="/welcome"
-            className="text-xs text-emerald-800 hover:text-emerald-900 font-bold bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200"
+            className="text-xs text-orange-800 hover:text-orange-900 font-bold bg-orange-50 px-3 py-1.5 rounded-xl border border-orange-200"
           >
             Guest Menu
           </Link>
@@ -109,8 +105,8 @@ const Scan = () => {
         {/* Scanner Card */}
         <div className="max-w-lg mx-auto bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold shadow-xs">
-              <Camera className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold shadow-xs">
+              <Camera className="w-3.5 h-3.5 text-orange-500" />
               <span>Camera Table Scanner</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Scan Table QR Code</h1>
@@ -125,7 +121,7 @@ const Scan = () => {
           </div>
 
           {scanResult && (
-            <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-center text-xs text-emerald-800 font-bold">
+            <div className="p-3 bg-orange-50 border border-orange-200 rounded-xl text-center text-xs text-orange-800 font-bold">
               Scanned: {scanResult}
             </div>
           )}
@@ -136,21 +132,21 @@ const Scan = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
             <div>
               <h2 className="text-xl font-black text-slate-900 flex items-center gap-2.5">
-                <UtensilsCrossed className="w-5 h-5 text-emerald-600" />
+                <UtensilsCrossed className="w-5 h-5 text-orange-500" />
                 <span>Restaurant Dining Tables & QR Codes</span>
               </h2>
               <p className="text-xs text-slate-500 mt-1">
                 You can scan any table QR with your phone camera, or click "Dine at Table" to simulate dining instantly.
               </p>
             </div>
-            <span className="text-xs font-extrabold text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-xl border border-emerald-200 w-fit">
+            <span className="text-xs font-extrabold text-orange-800 bg-orange-50 px-3.5 py-1.5 rounded-xl border border-orange-200 w-fit">
               {tables.length} Tables Available
             </span>
           </div>
 
           {loadingTables ? (
             <div className="text-center py-16 text-slate-500 text-xs font-medium">
-              <Loader2 className="w-7 h-7 animate-spin mx-auto mb-2 text-emerald-600" />
+              <Loader2 className="w-7 h-7 animate-spin mx-auto mb-2 text-orange-500" />
               Loading table QR stands...
             </div>
           ) : tables.length === 0 ? (
@@ -162,11 +158,11 @@ const Scan = () => {
               {tables.map((t) => (
                 <div
                   key={t._id}
-                  className="bg-white border border-slate-200 hover:border-emerald-300 rounded-3xl p-6 transition-all duration-300 hover:shadow-xl flex flex-col justify-between gap-5 group"
+                  className="bg-white border border-slate-200 hover:border-orange-300 rounded-3xl p-6 transition-all duration-300 hover:shadow-xl flex flex-col justify-between gap-5 group"
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-[10px] text-emerald-800 font-extrabold uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                      <span className="text-[10px] text-orange-800 font-extrabold uppercase tracking-wider bg-orange-50 px-2 py-0.5 rounded-md border border-orange-200">
                         Dining Station
                       </span>
                       <h3 className="text-xl font-black text-slate-900 mt-1">
@@ -177,14 +173,14 @@ const Scan = () => {
                         Capacity: {t.capacity || 4} Guests
                       </p>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold text-orange-800 bg-orange-50 px-2.5 py-1 rounded-full border border-orange-200">
+                      <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                       Active
                     </div>
                   </div>
 
                   {/* QR Image Box */}
-                  <div className="flex flex-col items-center justify-center p-5 bg-slate-50 rounded-2xl border border-slate-200 group-hover:border-emerald-200 transition-colors shadow-xs">
+                  <div className="flex flex-col items-center justify-center p-5 bg-slate-50 rounded-2xl border border-slate-200 group-hover:border-orange-200 transition-colors shadow-xs">
                     {t.qrImage ? (
                       <img
                         src={t.qrImage}
@@ -205,7 +201,7 @@ const Scan = () => {
                   <div className="grid grid-cols-2 gap-2.5 pt-1">
                     <Link
                       to={`/welcome?qr=${t.qrSlug}`}
-                      className="py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-xs text-center cursor-pointer active:scale-95"
+                      className="py-3 px-4 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-xs text-center cursor-pointer active:scale-95"
                     >
                       <span>Dine Here</span>
                       <ExternalLink className="w-3.5 h-3.5" />
