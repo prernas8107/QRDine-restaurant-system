@@ -314,7 +314,7 @@ const Homepage = () => {
                   {qty === 0 ? (
                     <button
                       onClick={() => handleAddToCart(item)}
-                      className="w-full py-2.5 px-4 bg-slate-900 hover:bg-orange-500 text-white font-bold text-xs rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-xs active:scale-95 cursor-pointer"
+                      className="w-full py-2.5 px-4 bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-xs hover:shadow-orange-500/20 active:scale-95 cursor-pointer"
                     >
                       <Plus className="w-4 h-4" />
                       <span>Add to Order</span>
