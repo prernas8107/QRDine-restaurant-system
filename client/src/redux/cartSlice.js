@@ -18,11 +18,24 @@ const loadCouponFromStorage = () => {
   }
 };
 
+const getStoredTableNumber = () => {
+  try {
+    const saved = localStorage.getItem('tableNumber');
+    if (saved && (Number(saved) > 10 || isNaN(Number(saved)))) {
+      localStorage.removeItem('tableNumber');
+      return '1';
+    }
+    return saved || '1';
+  } catch {
+    return '1';
+  }
+};
+
 const initialState = {
   items: loadCartFromStorage(), // [{ menuItem, quantity }]
   appliedCoupon: loadCouponFromStorage(),
   specialInstructions: localStorage.getItem('qrdine_instructions') || '',
-  tableNumber: localStorage.getItem('tableNumber') || null,
+  tableNumber: getStoredTableNumber(),
   tableSlug: localStorage.getItem('tableSlug') || null,
 };
 

@@ -36,8 +36,14 @@ export const bootstrapAppData = async () => {
     await admin.save();
   }
 
-  if ((await Table.countDocuments()) === 0) {
-    for (let n = 1; n <= 6; n += 1) {
+  // Clean up any rogue/invalid test tables (e.g. table number 2621)
+  await Table.deleteMany({ tableNumber: { $gt: 10 } });
+
+  // Ensure all 6 standard dining tables (1 through 6) exist and are properly configured
+  const liveFrontend = process.env.FRONTEND_URL?.replace(/\/$/, '');
+  for (let n = 1; n <= 6; n += 1) {
+    let table = await Table.findOne({ tableNumber: n });
+    if (!table) {
       const qrSlug = crypto.randomBytes(6).toString('hex');
       const qrCodeURL = buildTableQrUrl(qrSlug);
       const qrImage = await toQrImage(qrCodeURL);
@@ -49,24 +55,22 @@ export const bootstrapAppData = async () => {
         qrImage,
         isActive: true,
       });
-    }
-    console.log('Seeded 6 tables with QR codes');
-  } else {
-    // Auto-fix table QR URLs if not matching live FRONTEND_URL
-    const liveFrontend = process.env.FRONTEND_URL?.replace(/\/$/, '');
-    const tables = await Table.find();
-    for (const table of tables) {
+      console.log(`Seeded Table #${n} with QR code`);
+    } else {
       if (
         !table.qrCodeURL ||
-        table.qrCodeURL.includes('localhost') ||
-        table.qrCodeURL.includes('192.168.') ||
-        table.qrCodeURL.includes('10.') ||
+        !table.qrImage ||
+        !table.qrSlug ||
         (liveFrontend && !table.qrCodeURL.startsWith(liveFrontend))
       ) {
+        if (!table.qrSlug) {
+          table.qrSlug = crypto.randomBytes(6).toString('hex');
+        }
         const qrCodeURL = buildTableQrUrl(table.qrSlug);
         const qrImage = await toQrImage(qrCodeURL);
         table.qrCodeURL = qrCodeURL;
         table.qrImage = qrImage;
+        table.isActive = true;
         await table.save();
       }
     }
