@@ -6,12 +6,8 @@ export const fetchMenuItems = createAsyncThunk(
   'menu/fetchMenuItems',
   async (category, thunkApi) => {
     try {
-      const url =
-        category && category !== 'All'
-          ? `/menu?category=${encodeURIComponent(category)}`
-          : '/menu';
-
-      const res = await api.get(url);
+      // Fetch full menu so client has complete catalog for instant search & filtering
+      const res = await api.get('/menu?limit=100');
       return res.data;
     } catch (error) {
       return thunkApi.rejectWithValue(
@@ -21,12 +17,34 @@ export const fetchMenuItems = createAsyncThunk(
   }
 );
 
+const filterDishes = (masterList, selectedCategory, searchQuery) => {
+  const query = (searchQuery || '').toLowerCase().trim();
+  let list = masterList || [];
+
+  if (query) {
+    // If user is searching, search across the entire catalog for matching name, description, or category
+    return list.filter(
+      (item) =>
+        item.name?.toLowerCase().includes(query) ||
+        item.description?.toLowerCase().includes(query) ||
+        item.category?.toLowerCase().includes(query)
+    );
+  }
+
+  if (selectedCategory && selectedCategory !== 'All') {
+    list = list.filter((item) => item.category === selectedCategory);
+  }
+
+  return list;
+};
+
 const menuSlice = createSlice({
   name: 'menu',
   initialState: {
     menuItems: [],
-    allMenuItems: [], // Store all items for filtering
-    categories: [],
+    allMenuItems: [], // Full catalog
+    masterMenuItems: [], // Master copy of all dishes
+    categories: ['All'],
     loading: false,
     error: null,
     selectedCategory: 'All',
@@ -35,25 +53,27 @@ const menuSlice = createSlice({
   reducers: {
     setSelectedCategory: (state, action) => {
       state.selectedCategory = action.payload;
+      // Clear search when selecting a new category
+      state.searchQuery = '';
+      state.menuItems = filterDishes(
+        state.masterMenuItems,
+        action.payload,
+        ''
+      );
     },
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
-      const query = (action.payload || '').toLowerCase().trim();
-      let filtered = state.allMenuItems;
-      if (query) {
-        filtered = state.allMenuItems.filter(
-          (item) =>
-            item.name?.toLowerCase().includes(query) ||
-            item.description?.toLowerCase().includes(query) ||
-            item.category?.toLowerCase().includes(query)
-        );
-      }
-      state.menuItems = filtered;
+      state.menuItems = filterDishes(
+        state.masterMenuItems,
+        state.selectedCategory,
+        action.payload
+      );
     },
     clearMenuItems: (state) => {
       state.menuItems = [];
       state.allMenuItems = [];
-      state.categories = [];
+      state.masterMenuItems = [];
+      state.categories = ['All'];
     },
   },
   extraReducers: (builder) => {
@@ -64,25 +84,23 @@ const menuSlice = createSlice({
       })
       .addCase(fetchMenuItems.fulfilled, (state, action) => {
         state.loading = false;
-        state.allMenuItems = action.payload.data;
-        
-        // Apply search filter if search query exists
-        let filteredItems = action.payload.data;
-        if (state.searchQuery) {
-          const query = state.searchQuery.toLowerCase();
-          filteredItems = action.payload.data.filter(item => 
-            item.name.toLowerCase().includes(query) ||
-            item.description.toLowerCase().includes(query) ||
-            item.category.toLowerCase().includes(query)
-          );
-        }
-        
-        state.menuItems = filteredItems;
-        
-        if (state.selectedCategory === 'All') {
-          const uniqueCategories = ['All', ...new Set(action.payload.data.map(item => item.category))];
-          state.categories = uniqueCategories;
-        }
+        const dishes = action.payload.data || [];
+        state.masterMenuItems = dishes;
+        state.allMenuItems = dishes;
+
+        // Extract unique categories
+        const uniqueCategories = [
+          'All',
+          ...new Set(dishes.map((item) => item.category).filter(Boolean)),
+        ];
+        state.categories = uniqueCategories;
+
+        // Apply filtering
+        state.menuItems = filterDishes(
+          dishes,
+          state.selectedCategory,
+          state.searchQuery
+        );
       })
       .addCase(fetchMenuItems.rejected, (state, action) => {
         state.loading = false;
@@ -92,7 +110,8 @@ const menuSlice = createSlice({
 });
 
 export default menuSlice.reducer;
-export const { setSelectedCategory, setSearchQuery, clearMenuItems } = menuSlice.actions;
+export const { setSelectedCategory, setSearchQuery, clearMenuItems } =
+  menuSlice.actions;
 
 
 
