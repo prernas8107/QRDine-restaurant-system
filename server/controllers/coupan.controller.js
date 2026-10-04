@@ -121,6 +121,105 @@ export const registerCoupan = async (req, res) => {
   }
 };
 
+export const applyCoupan = async (req, res) => {
+  try {
+    const { code, cartAmount, totalAmount } = req.body;
+    if (!code) {
+      return res.status(400).json({
+        success: false,
+        message: 'Coupon code is required',
+      });
+    }
+
+    const cartPrice = Number(cartAmount || totalAmount || 0);
+    const coupan = await Coupan.findOne({
+      code: String(code).trim().toUpperCase(),
+      isActive: true,
+    });
+
+    if (!coupan) {
+      return res.status(404).json({
+        success: false,
+        message: 'Invalid or expired coupon code',
+      });
+    }
+
+    const now = new Date();
+    if (coupan.validFrom && now < coupan.validFrom) {
+      return res.status(400).json({
+        success: false,
+        message: 'Coupon is not valid yet',
+      });
+    }
+
+    if (coupan.validTo && now > coupan.validTo) {
+      return res.status(400).json({
+        success: false,
+        message: 'Coupon has expired',
+      });
+    }
+
+    const minOrder = coupan.minOrderAmount || 0;
+    if (cartPrice < minOrder) {
+      return res.status(400).json({
+        success: false,
+        message: `Minimum order amount for this coupon is ₹${minOrder}`,
+      });
+    }
+
+    if (coupan.usageLimit && coupan.usedCount >= coupan.usageLimit) {
+      return res.status(400).json({
+        success: false,
+        message: 'Coupon usage limit reached',
+      });
+    }
+
+    const userId = req.user?._id || req.user?.id;
+    if (coupan.isFirstOrder && userId) {
+      const user = await User.findById(userId);
+      if (user && user.totalOrders > 0) {
+        return res.status(400).json({
+          success: false,
+          message: 'This coupon is only valid for your first order',
+        });
+      }
+    }
+
+    let discountAmount = 0;
+    const discountVal = coupan.discountValue || 0;
+    if (coupan.discountType === 'fixedAmount') {
+      discountAmount = Math.min(cartPrice, discountVal);
+    } else if (coupan.discountType === 'percentage') {
+      discountAmount = (cartPrice * discountVal) / 100;
+      if (coupan.maxDiscount && discountAmount > coupan.maxDiscount) {
+        discountAmount = coupan.maxDiscount;
+      }
+    }
+
+    discountAmount = Math.round(discountAmount);
+    const finalAmount = Math.max(0, Math.round(cartPrice - discountAmount));
+
+    return res.status(200).json({
+      success: true,
+      message: `Coupon ${coupan.code} applied successfully!`,
+      data: {
+        code: coupan.code,
+        discountType: coupan.discountType,
+        discountValue: coupan.discountValue,
+        description: coupan.description,
+        discountAmount,
+        cartAmount: cartPrice,
+        finalAmount,
+      },
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 
 
 
