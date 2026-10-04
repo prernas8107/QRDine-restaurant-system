@@ -73,7 +73,7 @@ export const createMenu = async (req, res, next) => {
 // Get all menu items
 export const getAllMenuItems = async (req, res, next) => {
   try {
-    const { category, page = 1, limit = 50 } = req.query;
+    const { category, search, q, page = 1, limit = 50 } = req.query;
     const pageNum = parseInt(page, 10) || 1;
     const limitNum = parseInt(limit, 10) || 50;
 
@@ -81,6 +81,15 @@ export const getAllMenuItems = async (req, res, next) => {
     const filter = { isAvailable: true };
     if (category && category !== 'All') {
       filter.category = category;
+    }
+
+    const searchTerm = (search || q || '').trim();
+    if (searchTerm) {
+      filter.$or = [
+        { name: { $regex: searchTerm, $options: 'i' } },
+        { description: { $regex: searchTerm, $options: 'i' } },
+        { category: { $regex: searchTerm, $options: 'i' } },
+      ];
     }
 
     const [menuItems, totalDocument] = await Promise.all([
@@ -112,7 +121,20 @@ export const getAllMenuItems = async (req, res, next) => {
 
 export const getAdminMenuItems = async (req, res, next) => {
   try {
-    const menuItems = await Menu.find().sort({ category: 1, name: 1 });
+    const { search, q, category } = req.query;
+    const filter = {};
+    if (category && category !== 'All') filter.category = category;
+
+    const searchTerm = (search || q || '').trim();
+    if (searchTerm) {
+      filter.$or = [
+        { name: { $regex: searchTerm, $options: 'i' } },
+        { description: { $regex: searchTerm, $options: 'i' } },
+        { category: { $regex: searchTerm, $options: 'i' } },
+      ];
+    }
+
+    const menuItems = await Menu.find(filter).sort({ category: 1, name: 1 });
     return res.status(200).json({ success: true, data: menuItems });
   } catch (error) {
     next(error);
