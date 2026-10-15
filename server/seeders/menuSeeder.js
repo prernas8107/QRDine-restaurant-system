@@ -47,7 +47,7 @@ const menuItems = [
   {
     name: 'Crispy Veg Manchurian Dry',
     description: 'Crispy vegetable dumplings tossed with ginger, garlic, spring onions, and oriental dark soy sauce.',
-    image: 'https://imgs.search.brave.com/ynnd_48kzS6zZyiFvyLBDNADiWhLBAczG5NLnlKrhKk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29va2luZ3dpdGhz/aWRkaGkuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzEx/L3ZlZy1tYW5jaHVy/aWFuLWRyeS03NTB4/NTAwLmpwZWc',
+    image: 'https://images.unsplash.com/photo-1577186912275-4f74c57458ef?w=800&auto=format&fit=crop&q=80',
     price: 260,
     category: 'Appetizers',
     isAvailable: true,
@@ -229,7 +229,7 @@ const menuItems = [
   {
     name: 'Crispy Medu Vada (2 Pcs)',
     description: 'Crispy golden lentil fritters with soft fluffy center, served with sambar and freshly ground chutneys.',
-    image: 'https://imgs.search.brave.com/O9pHxYlfqJRSAJmcPpWcTDbZf4pw-Hu0kLHm3KQrzlQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzIwLzY5LzU0Lzcx/LzM2MF9GXzIwNjk1/NDcxNjZfb2cwbXlP/OHc4dzZvR2NsRHI0/NkV1SmdsZlRnSmhR/WlMuanBn',
+    image: 'https://images.unsplash.com/photo-1730191843435-073792ba22bc?w=800&auto=format&fit=crop&q=80',
     price: 140,
     category: 'South Indian',
     isAvailable: true,
@@ -289,7 +289,7 @@ const menuItems = [
   {
     name: 'Warm Gulab Jamun (2 Pcs)',
     description: 'Deep-fried golden milk solids soaked in warm cardamom and rose water infused sugar syrup.',
-    image: 'https://imgs.search.brave.com/4JHw-1kPAtW0QLArlNDr5CV2Nde9JX6RAlBgLKmSwCU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbnJl/ZGJlcnJ5LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMy8x/MC9HdWxhYi1KYW11/bi0yLVBjcy5wbmc',
+    image: 'https://images.unsplash.com/photo-1666190092159-3171cf0fbb12?w=800&auto=format&fit=crop&q=80',
     price: 120,
     category: 'Desserts',
     isAvailable: true,

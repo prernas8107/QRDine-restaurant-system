@@ -258,8 +258,10 @@ const Homepage = () => {
                       alt={item.name}
                       className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
                       onError={(e) => {
-                        e.target.src =
-                          'https://placehold.co/600x400/f97316/ffffff?text=Delicious+Dish';
+                        const fallback = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&auto=format&fit=crop&q=80';
+                        if (e.target.src !== fallback) {
+                          e.target.src = fallback;
+                        }
                       }}
                     />
 
