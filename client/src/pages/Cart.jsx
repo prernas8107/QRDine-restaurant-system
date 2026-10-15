@@ -237,17 +237,17 @@ const Cart = () => {
   // ORDER SUCCESS MODAL
   if (orderConfirmed) {
     return (
-      <div className="max-w-xl mx-auto py-12 px-4 space-y-6">
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 text-center space-y-6 shadow-xl">
-          <div className="w-20 h-20 rounded-2xl bg-orange-100 border border-orange-200 text-orange-600 mx-auto flex items-center justify-center shadow-md shadow-orange-500/10">
-            <CheckCircle2 className="w-10 h-10" />
+      <div className="max-w-xl mx-auto py-6 sm:py-12 px-3 sm:px-4 space-y-4 sm:space-y-6">
+        <div className="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 text-center space-y-5 sm:space-y-6 shadow-xl">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-100 border border-orange-200 text-orange-600 mx-auto flex items-center justify-center shadow-md shadow-orange-500/10">
+            <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
           </div>
 
           <div className="space-y-2">
-            <span className="px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold uppercase tracking-wider">
+            <span className="px-3 py-1 sm:px-3.5 sm:py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
               Sent Directly to Kitchen 👨‍🍳
             </span>
-            <h2 className="text-3xl font-black text-slate-900">Order Confirmed!</h2>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Order Confirmed!</h2>
             <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto">
               Your delicious dishes are being freshly prepared and will be delivered straight to Table #{orderConfirmed.tableNumber || tableNumber}.
             </p>

@@ -89,26 +89,26 @@ const Homepage = () => {
   };
 
   return (
-    <div className="space-y-8 pb-28">
+    <div className="space-y-6 sm:space-y-8 pb-[calc(7rem+env(safe-area-inset-bottom,0px))]">
       {/* Featured Restaurant Hero */}
       <Hero />
 
       {/* Table Dine-In Status Bar */}
-      <div id="menu-section" className="relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-6 sm:p-7 shadow-xs">
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
+      <div id="menu-section" className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white border border-slate-200 p-4 sm:p-6 md:p-7 shadow-xs">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-5">
           <div className="space-y-2">
-            <div className="flex items-center gap-3">
-              <span className="px-3.5 py-1.5 rounded-full bg-orange-500 text-white font-extrabold text-xs tracking-wider uppercase flex items-center gap-2 shadow-xs">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <span className="px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-orange-500 text-white font-extrabold text-[11px] sm:text-xs tracking-wider uppercase flex items-center gap-1.5 sm:gap-2 shadow-xs">
                 <UtensilsCrossed className="w-3.5 h-3.5" />
                 Table #{tableNumber}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 text-orange-800 text-xs font-bold border border-orange-200">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-orange-50 text-orange-800 text-[11px] sm:text-xs font-bold border border-orange-200">
                 <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-                Dine-In Session Active
+                Dine-In Active
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 tracking-tight">
               Chef Crafted{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600">
                 Vegetarian Delights
@@ -121,17 +121,17 @@ const Homepage = () => {
           </div>
 
           {/* Quick Actions */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
             <button
               onClick={() => setWaiterModalOpen(true)}
-              className="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 text-xs font-bold flex items-center gap-2 transition-all shadow-xs active:scale-95 cursor-pointer"
+              className="flex-1 sm:flex-none px-3.5 sm:px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-xs active:scale-95 cursor-pointer"
             >
               <BellRing className="w-4 h-4 text-orange-500" />
               <span>Call Waiter</span>
             </button>
             <button
               onClick={() => navigate('/welcome')}
-              className="px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 text-xs font-semibold hover:bg-slate-50 transition-colors cursor-pointer"
+              className="flex-1 sm:flex-none px-3 sm:px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 text-xs font-semibold hover:bg-slate-50 transition-colors text-center cursor-pointer"
             >
               Switch Table
             </button>
@@ -176,14 +176,14 @@ const Homepage = () => {
         </div>
 
         {/* Categories Bar */}
-        <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none pt-1">
+        <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-2 scrollbar-none pt-1 touch-scroll -mx-3 px-3 sm:mx-0 sm:px-0">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 onClick={() => dispatch(setSelectedCategory(cat))}
-                className={`px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
+                className={`px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 sm:gap-2 cursor-pointer shrink-0 ${
                   isSelected
                     ? 'bg-orange-500 text-white shadow-md shadow-orange-500/20 scale-[1.02]'
                     : 'bg-white text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 shadow-2xs'
@@ -357,19 +357,19 @@ const Homepage = () => {
       {totalCartCount > 0 && (
         <aside
           aria-label="Current Cart Order"
-          className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-xl z-50 animate-bounce-slow"
+          className="fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom,0px))] left-1/2 -translate-x-1/2 w-[94%] sm:w-[90%] max-w-xl z-50 animate-bounce-slow"
         >
-          <div className="bg-slate-900 text-white p-4 rounded-2xl shadow-2xl flex items-center justify-between gap-4 font-bold border border-slate-700">
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-orange-500 text-white flex items-center justify-center shadow-md">
-                <ShoppingBag className="w-5 h-5" />
+          <div className="bg-slate-900 text-white p-3 sm:p-4 rounded-2xl shadow-2xl flex items-center justify-between gap-2.5 sm:gap-4 font-bold border border-slate-700">
+            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-orange-500 text-white flex items-center justify-center shadow-md shrink-0">
+                <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <div>
-                <p className="text-[11px] uppercase tracking-wider text-slate-400 font-bold">
-                  Table #{tableNumber} • {totalCartCount}{' '}
+              <div className="min-w-0">
+                <p className="text-[10px] sm:text-[11px] uppercase tracking-wider text-slate-400 font-bold truncate">
+                  T#{tableNumber} • {totalCartCount}{' '}
                   {totalCartCount === 1 ? 'Item' : 'Items'}
                 </p>
-                <p className="text-xl font-black text-white">
+                <p className="text-base sm:text-xl font-black text-white">
                   ₹{totalCartPrice}
                 </p>
               </div>
@@ -377,9 +377,9 @@ const Homepage = () => {
 
             <button
               onClick={() => navigate('/cart')}
-              className="py-2.5 px-5 bg-orange-500 hover:bg-orange-600 text-white rounded-xl text-xs font-bold transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
+              className="py-2.5 px-3.5 sm:px-5 bg-orange-500 hover:bg-orange-600 text-white rounded-xl text-xs font-bold transition-all shadow-md active:scale-95 flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer"
             >
-              <span>View Cart & Order</span>
+              <span>View Cart</span>
               <span>➔</span>
             </button>
           </div>
@@ -388,14 +388,14 @@ const Homepage = () => {
 
       {/* Call Waiter Modal */}
       {waiterModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-          <div className="bg-white border border-slate-200 rounded-3xl p-6 max-w-sm w-full space-y-5 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm">
+          <div className="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 max-w-sm w-full space-y-4 sm:space-y-5 shadow-2xl mx-auto">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-700">
                   <BellRing className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900">
+                <h3 className="text-sm sm:text-base font-bold text-slate-900">
                   Table #{tableNumber} Service
                 </h3>
               </div>
@@ -407,11 +407,11 @@ const Homepage = () => {
               </button>
             </div>
 
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-slate-600 leading-relaxed">
               Need assistance at your table? Choose an option below and our waitstaff will arrive immediately:
             </p>
 
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
               {[
                 { title: '💧 Need Water', reason: 'Fresh Drinking Water' },
                 { title: '🍴 Need Cutlery', reason: 'Extra Cutlery & Plates' },
@@ -422,7 +422,7 @@ const Homepage = () => {
                   key={idx}
                   onClick={() => handleCallWaiter(item.reason)}
                   disabled={waiterRequestSent}
-                  className="p-3 bg-slate-50 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-900 border border-slate-200 rounded-xl text-left transition-colors text-xs font-semibold active:scale-95 cursor-pointer text-slate-800"
+                  className="p-2.5 sm:p-3 bg-slate-50 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-900 border border-slate-200 rounded-xl text-left transition-colors text-[11px] sm:text-xs font-semibold active:scale-95 cursor-pointer text-slate-800"
                 >
                   {item.title}
                 </button>

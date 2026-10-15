@@ -14,8 +14,8 @@ function FindYourAccount() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-4 relative overflow-hidden font-sans">
-      <div className="relative z-10 w-full max-w-md bg-white border border-slate-200 rounded-3xl p-8 shadow-xl space-y-6">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-3 sm:p-4 relative overflow-hidden font-sans pt-[max(1.5rem,env(safe-area-inset-top,0px))] pb-[max(1.5rem,env(safe-area-inset-bottom,0px))]">
+      <div className="relative z-10 w-full max-w-md bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl space-y-5 sm:space-y-6">
         <Link
           to="/login"
           className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors"

@@ -11,24 +11,24 @@ export const Logo = ({
 
   const sizeMap = {
     sm: {
-      container: 'w-11 h-11 sm:w-12 sm:h-12 rounded-2xl',
-      title: 'text-lg sm:text-xl font-black',
-      subtitle: 'text-[10px]',
+      container: 'w-8 h-8 sm:w-10 sm:h-10 rounded-xl',
+      title: 'text-base sm:text-lg font-black',
+      subtitle: 'text-[9px] sm:text-[10px]',
     },
     md: {
-      container: 'w-14 h-14 sm:w-16 sm:h-16 rounded-2xl',
-      title: 'text-xl sm:text-2xl font-black',
-      subtitle: 'text-[11px]',
+      container: 'w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl',
+      title: 'text-lg sm:text-xl md:text-2xl font-black',
+      subtitle: 'text-[9px] sm:text-[10px] md:text-[11px]',
     },
     lg: {
-      container: 'w-20 h-20 sm:w-24 sm:h-24 rounded-3xl',
-      title: 'text-3xl sm:text-4xl font-black',
-      subtitle: 'text-xs',
+      container: 'w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl sm:rounded-3xl',
+      title: 'text-2xl sm:text-3xl md:text-4xl font-black',
+      subtitle: 'text-[10px] sm:text-xs',
     },
     xl: {
-      container: 'w-28 h-28 sm:w-32 sm:h-32 rounded-3xl',
-      title: 'text-4xl sm:text-5xl font-black',
-      subtitle: 'text-sm',
+      container: 'w-22 h-22 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-2xl sm:rounded-3xl',
+      title: 'text-3xl sm:text-4xl md:text-5xl font-black',
+      subtitle: 'text-xs sm:text-sm',
     },
   };
 

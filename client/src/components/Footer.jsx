@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-slate-200 mt-auto">
+    <footer className="bg-white border-t border-slate-200 mt-auto pb-[max(1rem,env(safe-area-inset-bottom,0px))]">
       {/* Advertisement / Perks Section */}
       <div className="bg-slate-50/80 border-b border-slate-200 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

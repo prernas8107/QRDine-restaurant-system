@@ -71,10 +71,10 @@ const Login = () => {
         />
       </div>
 
-      <div className="w-full lg:w-[54%] flex items-center justify-center px-5 py-10 sm:px-10 relative bg-white">
+      <div className="w-full lg:w-[54%] flex items-center justify-center px-4 sm:px-10 py-8 sm:py-12 relative bg-white pt-[max(2rem,env(safe-area-inset-top,0px))] pb-[max(2rem,env(safe-area-inset-bottom,0px))]">
         <div className="w-full max-w-[420px] relative z-10">
-          <div className="lg:hidden mb-10">
-            <Logo showText={true} subtitle="Smart Dining" />
+          <div className="lg:hidden mb-6 sm:mb-10">
+            <Logo showText={true} size="md" subtitle="Smart Dining" />
           </div>
 
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-700 mb-2">

@@ -49,18 +49,18 @@ const TableQRModal = ({ isOpen, onClose, currentTableNumber }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 max-w-xl w-full space-y-5 max-h-[85vh] flex flex-col shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm">
+      <div className="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-7 max-w-xl w-full space-y-4 sm:space-y-5 max-h-[92vh] sm:max-h-[85vh] flex flex-col shadow-2xl">
         <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-orange-50 border border-orange-200 text-orange-700 flex items-center justify-center shadow-xs">
-              <QrCode className="w-5 h-5" />
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-orange-50 border border-orange-200 text-orange-700 flex items-center justify-center shadow-xs shrink-0">
+              <QrCode className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div>
-              <h3 className="text-base sm:text-lg font-black text-slate-900">
+              <h3 className="text-sm sm:text-lg font-black text-slate-900">
                 Restaurant Tables & QR Stands
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-[11px] sm:text-xs text-slate-500">
                 Switch table or open contactless QR scan session
               </p>
             </div>
@@ -68,14 +68,14 @@ const TableQRModal = ({ isOpen, onClose, currentTableNumber }) => {
 
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-slate-700 rounded-xl hover:bg-slate-100 transition-colors cursor-pointer"
+            className="p-1.5 sm:p-2 text-slate-400 hover:text-slate-700 rounded-xl hover:bg-slate-100 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Tables Grid */}
-        <div className="flex-1 overflow-y-auto space-y-3 pr-1">
+        <div className="flex-1 overflow-y-auto space-y-3 pr-1 touch-scroll">
           {loading ? (
             <div className="text-center py-12 text-slate-500 text-xs">
               <Loader2 className="w-7 h-7 animate-spin mx-auto mb-2 text-orange-500" />

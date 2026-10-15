@@ -80,36 +80,37 @@ const Scan = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans pb-16">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans pb-[calc(4rem+env(safe-area-inset-bottom,0px))]">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/90 border-b border-slate-200 backdrop-blur-xl shadow-xs">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-white/95 border-b border-slate-200 backdrop-blur-xl shadow-xs pt-[env(safe-area-inset-top,0px)]">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
           <Link
             to="/"
-            className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors text-xs font-bold"
+            className="flex items-center gap-1.5 sm:gap-2 text-slate-600 hover:text-slate-900 transition-colors text-xs font-bold"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to Home</span>
+            <span className="hidden xs:inline">Back to Home</span>
+            <span className="xs:hidden">Back</span>
           </Link>
           <Logo size="sm" showText={true} subtitle="Scanner" />
           <Link
             to="/welcome"
-            className="text-xs text-orange-800 hover:text-orange-900 font-bold bg-orange-50 px-3 py-1.5 rounded-xl border border-orange-200"
+            className="text-[11px] sm:text-xs text-orange-800 hover:text-orange-900 font-bold bg-orange-50 px-2.5 sm:px-3 py-1.5 rounded-xl border border-orange-200"
           >
             Guest Menu
           </Link>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-12">
+      <main className="max-w-6xl mx-auto px-3 sm:px-6 py-6 sm:py-8 space-y-8 sm:space-y-12">
         {/* Scanner Card */}
-        <div className="max-w-lg mx-auto bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+        <div className="max-w-lg mx-auto bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl space-y-5 sm:space-y-6">
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold shadow-xs">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-[11px] sm:text-xs font-bold shadow-xs">
               <Camera className="w-3.5 h-3.5 text-orange-500" />
               <span>Camera Table Scanner</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Scan Table QR Code</h1>
+            <h1 className="text-xl sm:text-3xl font-black text-slate-900">Scan Table QR Code</h1>
             <p className="text-xs text-slate-500 max-w-xs mx-auto leading-relaxed">
               Point your camera at the table QR stand to automatically detect your table and open the menu.
             </p>

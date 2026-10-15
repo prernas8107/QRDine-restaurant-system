@@ -30,27 +30,27 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 md:py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column: Hero Content */}
-          <div className="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div className="lg:col-span-7 text-center lg:text-left space-y-5 sm:space-y-6">
             {/* Top Rating & Service Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-orange-50 border border-orange-200/80 rounded-full shadow-xs">
+            <div className="inline-flex flex-wrap justify-center lg:justify-start items-center gap-2 sm:gap-2.5 px-3 py-1.5 sm:px-3.5 sm:py-1.5 bg-orange-50 border border-orange-200/80 rounded-full shadow-xs">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
               </span>
-              <span className="text-xs font-bold text-orange-800 tracking-wide uppercase">
+              <span className="text-[10px] sm:text-xs font-bold text-orange-800 tracking-wide uppercase">
                 Contactless Table Dining & Live Menu
               </span>
               <div className="flex items-center gap-1 pl-2 border-l border-orange-200">
                 <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                <span className="text-xs font-bold text-slate-800">4.9/5</span>
+                <span className="text-[11px] sm:text-xs font-bold text-slate-800">4.9/5</span>
               </div>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.2]">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.25]">
               Savor Gourmet Flavors,{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600">
                 Ordered Instantly
@@ -59,30 +59,30 @@ const Hero = () => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            <p className="text-xs sm:text-base text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
               Scan the QR code at your table to browse our signature culinary recipes,
               customize orders in real-time, apply instant discounts, and enjoy speedy
               chef-crafted dishes with zero wait time.
             </p>
 
             {/* Feature Badges */}
-            <div className="flex flex-wrap gap-3 justify-center lg:justify-start pt-1">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-slate-700 text-xs font-semibold">
+            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start pt-1">
+              <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-slate-700 text-[11px] sm:text-xs font-semibold">
                 <Clock className="w-3.5 h-3.5 text-orange-500" />
                 <span>10-15 Min Fast Prep</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-slate-700 text-xs font-semibold">
+              <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-slate-700 text-[11px] sm:text-xs font-semibold">
                 <Award className="w-3.5 h-3.5 text-orange-500" />
                 <span>100% Pure Vegetarian</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-slate-700 text-xs font-semibold">
+              <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-slate-700 text-[11px] sm:text-xs font-semibold">
                 <Zap className="w-3.5 h-3.5 text-orange-500" />
                 <span>Direct Kitchen Dispatch</span>
               </div>
             </div>
 
             {/* CTA Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start pt-3">
+            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3.5 justify-center lg:justify-start pt-2">
               <button
                 onClick={() => {
                   const menuSection = document.getElementById('menu-section');
@@ -90,7 +90,7 @@ const Hero = () => {
                     menuSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="group px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm rounded-xl transition-all duration-200 flex items-center justify-center gap-2.5 shadow-md shadow-orange-500/20 active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto group px-6 py-3.5 sm:py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all duration-200 flex items-center justify-center gap-2.5 shadow-md shadow-orange-500/20 active:scale-95 cursor-pointer"
               >
                 <span>Browse Menu</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -98,7 +98,7 @@ const Hero = () => {
 
               <button
                 onClick={() => navigate('/scan')}
-                className="px-5 py-3 bg-white border border-slate-300 hover:border-orange-500 hover:text-orange-600 text-slate-700 font-bold text-sm rounded-xl hover:bg-orange-50/50 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 shadow-xs cursor-pointer"
+                className="w-full sm:w-auto px-5 py-3.5 sm:py-3 bg-white border border-slate-300 hover:border-orange-500 hover:text-orange-600 text-slate-700 font-bold text-xs sm:text-sm rounded-xl hover:bg-orange-50/50 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 shadow-xs cursor-pointer"
               >
                 <QrCode className="w-4 h-4 text-orange-500" />
                 <span>Scan / Pick Table</span>
@@ -106,14 +106,14 @@ const Hero = () => {
 
               <button
                 onClick={() => navigate('/cart')}
-                className="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm rounded-xl active:scale-95 transition-all duration-200 cursor-pointer"
+                className="w-full sm:w-auto px-5 py-3 sm:py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs sm:text-sm rounded-xl active:scale-95 transition-all duration-200 cursor-pointer"
               >
                 View Cart
               </button>
             </div>
 
             {/* Live Stats Row */}
-            <div className="grid grid-cols-3 gap-4 pt-5 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 sm:pt-5 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
               <div className="text-center lg:text-left">
                 <div className="text-2xl font-black text-slate-900">50k+</div>
                 <div className="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">

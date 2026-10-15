@@ -121,21 +121,21 @@ const Welcome = () => {
       </div>
 
       {/* Top Bar Header */}
-      <header className="relative z-10 max-w-5xl mx-auto w-full px-6 py-6 flex items-center justify-between">
+      <header className="relative z-10 max-w-5xl mx-auto w-full px-3 sm:px-6 py-3 sm:py-6 flex items-center justify-between pt-[env(safe-area-inset-top,0.75rem)]">
         <Link to="/welcome" className="focus:outline-none">
-          <Logo showText={true} subtitle="Smart Dine-In Experience" />
+          <Logo showText={true} size="md" subtitle="Smart Dine-In Experience" />
         </Link>
 
-        <div className="flex items-center gap-2 sm:gap-4 text-xs font-bold">
+        <div className="flex items-center gap-1.5 sm:gap-3 text-xs font-bold">
           <Link
             to="/login"
-            className="px-3.5 py-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-200/60 transition-all"
+            className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-200/60 text-[11px] sm:text-xs transition-all"
           >
             Member Login
           </Link>
           <Link
             to="/register"
-            className="px-4 py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white shadow-xs transition-all"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white shadow-xs text-[11px] sm:text-xs transition-all"
           >
             Join Rewards
           </Link>
@@ -143,18 +143,18 @@ const Welcome = () => {
       </header>
 
       {/* Main Container */}
-      <main className="relative z-10 max-w-lg mx-auto w-full px-4 sm:px-6 py-8 flex-1 flex flex-col justify-center">
+      <main className="relative z-10 max-w-lg mx-auto w-full px-3 sm:px-6 py-4 sm:py-8 flex-1 flex flex-col justify-center">
         {/* Table Card */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+        <div className="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl space-y-5 sm:space-y-6">
           {/* Header section */}
-          <div className="text-center space-y-2.5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold shadow-xs">
+          <div className="text-center space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-[11px] sm:text-xs font-bold shadow-xs">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
               <QrCode className="w-3.5 h-3.5 text-orange-500" />
               <span>Smart Table Connected</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
               {tableData ? (
                 <>Welcome to Table #{tableData.tableNumber}</>
               ) : (

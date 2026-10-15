@@ -6,7 +6,7 @@ import checkRole from '../middlewares/checkRole.js';
 
 const router = express.Router();
 
-router.get('/orders', checkGuestOrUser, getOrders);
+router.get(['/orders', '/orders/my-orders'], checkGuestOrUser, getOrders);
 router.post('/orders', checkGuestOrUser, createOrder);
 router.patch('/orders/:id', verifyToken, checkRole(['admin']), updateOrderStatus);
 
