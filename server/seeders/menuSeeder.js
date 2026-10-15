@@ -47,7 +47,7 @@ const menuItems = [
   {
     name: 'Crispy Veg Manchurian Dry',
     description: 'Crispy vegetable dumplings tossed with ginger, garlic, spring onions, and oriental dark soy sauce.',
-    image: 'https://images.unsplash.com/photo-1577186912275-4f74c57458ef?w=800&auto=format&fit=crop&q=80',
+    image: 'https://www.sanjanafeasts.co.uk/wp-content/uploads/2020/04/IMG_1746-640x853.jpg.webp',
     price: 260,
     category: 'Appetizers',
     isAvailable: true,
